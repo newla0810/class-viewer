@@ -1,7 +1,7 @@
 // 수업자료 뷰어 설정
 // Apps Script를 '웹 앱'으로 배포한 뒤 받은 주소(…/exec)를 API_URL에 붙여넣으세요.
 window.APP_CONFIG = {
-  API_URL: '',
+  API_URL: 'https://script.google.com/macros/s/AKfycby9hOiZt_s9tATl94nah6hhlvvkhXlDCAKvnZSSLwjXhivAYspvIj8XihUVVv_hbVBY/exec',
 
   TITLE: '영어 수업자료',
   SUBTITLE: 'BOMUN HIGH SCHOOL · ENGLISH',
