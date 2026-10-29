@@ -155,11 +155,10 @@ a{color:inherit}
 .center-msg small{color:var(--muted);font-size:14px}
 .vm-bg{position:fixed;inset:0;z-index:40;display:flex;padding:20px;background:rgba(18,20,23,.55)}
 .vm{flex:1;min-width:0;display:flex;flex-direction:column;border-radius:24px;background:var(--surface);box-shadow:0 24px 64px rgba(18,20,23,.35);overflow:hidden}
-.vm-head{flex:none;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 10px 0 22px;border-bottom:1px solid var(--line)}
+.vm-head{flex:none;height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 10px 0 22px;border-bottom:1px solid var(--line)}
 .vm-head .t{min-width:0;display:flex;align-items:center;gap:10px;white-space:nowrap}
 .vm-head .t b{font-size:18px;font-weight:700}
 .vm-head .t span{min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:15px;color:var(--muted)}
-.vm-head .btn{height:44px;padding:0 16px 0 12px;border-radius:12px;font-size:15px}
 .vm-body{position:relative;flex:1;min-height:0}
 .vm-body iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
@@ -307,6 +306,21 @@ textarea.inp.code{font-family:var(--code);font-size:17px;line-height:1.75;white-
 .ed-extra-head i{flex:none;width:30px;font-style:normal;font-family:var(--mono);font-size:15px;font-weight:600;color:var(--muted)}
 .ed-extra-head .inp{flex:1;min-width:0}
 .warn{font-size:14px;font-weight:600;color:var(--bad)}
+.ed-vis{max-width:1240px;margin:0 auto}
+.ed-vis-row{display:flex;flex-wrap:wrap;align-items:flex-start;gap:24px}
+.vis-list{flex:0 1 260px;min-width:0}
+.vis-list .ed-item .n svg{display:block}
+.vis-body{flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.vis-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:14px}
+.ed-mark{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ed-note{margin:0;font-size:14px;line-height:1.55;color:var(--muted)}
+.fig-rows{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px 16px}
+.fig-row{display:flex;align-items:center;gap:10px}
+.fig-row .k{flex:none;width:84px;font-size:13px;font-weight:600;color:var(--muted)}
+.fig-row .inp{flex:1;min-width:0;height:46px;font-size:16px}
+.vis-prev-head{display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:600;color:var(--muted)}
+.vis-prev{position:relative;border-radius:14px;border:1px solid var(--line2);overflow:hidden;background:#fff}
+.vis-prev iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0}
 .ed-foot{flex:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:14px 40px;background:var(--surface);border-top:1px solid var(--line);font-size:15px;color:var(--ink2)}
 .ed-foot.ok{background:var(--hl);font-weight:600}
 .ed-foot.bad{background:#FBEAEA;color:var(--bad);font-weight:600}
@@ -543,7 +557,7 @@ const titleOf = (p) => p.topic || p.type || p.name;
 function parseRoute() {
   const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch (e) { return x; } });
   if (parts[0] === 'p' && parts[1]) return { view: 'passage', id: parts[1], tab: parts[2] || '', visual: parts[3] === 'visual' };
-  if (parts[0] === 'edit' && parts[1]) return { view: 'edit', id: parts[1], which: parts[2] === 'quiz' ? 'quiz' : 'explain' };
+  if (parts[0] === 'edit' && parts[1]) return { view: 'edit', id: parts[1], which: parts[2] === 'quiz' || parts[2] === 'visual' ? parts[2] : 'explain' };
   if (parts[0] === 'g' && parts[1]) return { view: 'home', grade: parts[1] };
   return { view: 'home' };
 }
@@ -1015,9 +1029,7 @@ function Passage({ p, route }) {
               <span className="nn">{next ? short(next) : ''}</span><Icon name="down" size={16} stroke={2.2} />
             </button>
             <div className="grow lo" />
-            {(tab === 'explain' || tab === 'quiz') && (
-              <button type="button" className="rb ic" aria-label="수정" title="수정" onClick={() => nav('edit/' + enc(p.id) + '/' + tab, true)}><Icon name="pencil" size={20} /></button>
-            )}
+            <button type="button" className="rb ic" aria-label="수정" title="수정" onClick={() => nav('edit/' + enc(p.id) + '/' + (tab === 'pdf' ? (f.visual ? 'visual' : 'explain') : tab), true)}><Icon name="pencil" size={20} /></button>
             <FullscreenButton rail />
             <button type="button" className="rb ic" aria-label="메뉴 접기" title="메뉴 접기" onClick={() => setRailOff(true)}><Icon name="dbl" size={20} stroke={2.2} /></button>
           </nav>
@@ -1378,6 +1390,7 @@ function VisualModal({ p, info, onClose }) {
   const f = useFile(info);
   const frame = useRef(null);
   const closeRef = useRef(onClose); closeRef.current = onClose;
+  const [innerClose, setInnerClose] = useState(false);
   const title = useMemo(() => {
     const m = f.data && f.data.text && f.data.text.match(/<title>([^<]*)<\/title>/i);
     const t = m ? m[1].trim() : '';
@@ -1386,7 +1399,11 @@ function VisualModal({ p, info, onClose }) {
   useEffect(() => {
     const key = (e) => { if (e.key === 'Escape') closeRef.current(); };
     // 설명 자료 안에서 Esc를 누르면 창이 알려 줌
-    const msg = (e) => { if (frame.current && e.source === frame.current.contentWindow && e.data && e.data.cmv === 'close') closeRef.current(); };
+    const msg = (e) => {
+      if (!frame.current || e.source !== frame.current.contentWindow || !e.data) return;
+      if (e.data.cmv === 'close') closeRef.current();
+      if (e.data.cmv === 'ready' && e.data.close) setInnerClose(true);
+    };
     document.addEventListener('keydown', key);
     window.addEventListener('message', msg);
     return () => { document.removeEventListener('keydown', key); window.removeEventListener('message', msg); };
@@ -1396,7 +1413,7 @@ function VisualModal({ p, info, onClose }) {
       <div className="vm">
         <div className="vm-head">
           <div className="t"><Icon name="screen" size={20} /><b>설명 자료</b><span>{p.numLabel ? p.numLabel + ' · ' : ''}{title}</span></div>
-          <button type="button" className="btn" onClick={onClose}><Icon name="x" size={20} stroke={2.2} />닫기</button>
+          {!innerClose && <button type="button" className="sq-btn sm" aria-label="닫기" title="닫기" onClick={onClose}><Icon name="x" size={22} stroke={2.2} /></button>}
         </div>
         <div className="vm-body">
           {f.status === 'ok' && <iframe ref={frame} title="설명 자료" sandbox="allow-scripts" srcDoc={f.data.text} onLoad={(e) => { try { e.currentTarget.focus(); } catch (x) {} }} />}
@@ -1669,6 +1686,172 @@ function QuizView({ info }) {
   );
 }
 
+/* ───────── 설명 자료 고치기: 창 제목·단계 글·그림 글자 ───────── */
+// 그림(.fig) 안의 글자 조각. 순서대로 번호를 매겨 고친 뒤 같은 순서로 되돌려 넣음
+function figTextNodes(doc) {
+  const fig = doc.querySelector('.fig');
+  if (!fig) return [];
+  const out = [];
+  const w = doc.createTreeWalker(fig, NodeFilter.SHOW_TEXT);
+  let n;
+  while ((n = w.nextNode())) {
+    if (!n.nodeValue.trim()) continue;
+    if (n.parentElement && n.parentElement.closest('svg,style,script')) continue;
+    out.push(n);
+  }
+  return out;
+}
+function figLabel(n) {
+  const p = n.parentElement;
+  if (!p) return '글자';
+  if (p.closest('.lab')) return p.matches('small') ? '화살표 영어' : '화살표';
+  const rules = [['.lbl', '이름'], ['.brk', '괄호'], ['.pill', '말풍선'], ['.strip', '결론'], ['.col b', '칸 제목'], ['.col p', '칸 내용'], ['.vs', 'vs'], ['.plus', '더하기'], ['.node', '원']];
+  for (const [sel, name] of rules) if (p.closest(sel)) return name;
+  return '글자';
+}
+function parseVisual(text) {
+  const doc = new DOMParser().parseFromString(String(text || ''), 'text/html');
+  const el = doc.getElementById('steps');
+  let steps = null;
+  if (el && /json/i.test(el.getAttribute('type') || '')) {
+    try { const v = JSON.parse(el.textContent); if (Array.isArray(v)) steps = v.map((s) => ({ ref: '', title: '', en: '', ko: '', ...s })); } catch (e) {}
+  }
+  return { title: doc.title || '', steps, figs: figTextNodes(doc).map((n) => ({ label: figLabel(n), value: n.nodeValue.trim() })) };
+}
+function buildVisual(text, v) {
+  const doc = new DOMParser().parseFromString(String(text || ''), 'text/html');
+  doc.title = v.title.trim();
+  figTextNodes(doc).forEach((n, i) => {
+    if (!v.figs[i]) return;
+    const m = n.nodeValue.match(/^(\s*)[\s\S]*?(\s*)$/);
+    n.nodeValue = m[1] + v.figs[i].value + m[2];
+  });
+  const el = doc.getElementById('steps');
+  if (el && v.steps) {
+    const rows = v.steps.map((s) => '  ' + JSON.stringify({ ref: s.ref, title: s.title, en: s.en, ko: s.ko }).replace(/</g, '\\u003c'));
+    el.textContent = '\n[\n' + rows.join(',\n') + '\n]\n';
+  }
+  return '<!doctype html>\n' + doc.documentElement.outerHTML;
+}
+// [[ ]] 형광펜 켜고 끄기: 칠한 곳 안을 고르면 지우고, 아니면 고른 글자를 칠함
+function toggleMark(value, a, b) {
+  const re = /\[\[([\s\S]+?)\]\]/g;
+  let m;
+  while ((m = re.exec(value))) {
+    const s0 = m.index, e0 = m.index + m[0].length;
+    if (a >= s0 && b <= e0) return { value: value.slice(0, s0) + m[1] + value.slice(e0), a: s0, b: s0 + m[1].length };
+  }
+  while (a < b && /\s/.test(value[a])) a++;
+  while (b > a && /\s/.test(value[b - 1])) b--;
+  if (a === b) return null;
+  if (/\[\[|\]\]/.test(value.slice(a, b))) return null;
+  return { value: value.slice(0, a) + '[[' + value.slice(a, b) + ']]' + value.slice(b), a: a + 2, b: b + 2 };
+}
+const wordCount = (s) => (String(s || '').replace(/\[\[|\]\]/g, '').match(/[A-Za-z’'-]+/g) || []).length;
+
+// 칠판 화면 크기로 그린 뒤 줄여서 보여 주는 미리보기
+const PREV_W = 1880, PREV_H = 990;
+function VisualPreview({ html, step }) {
+  const box = useRef(null), frame = useRef(null);
+  const [w, setW] = useState(0);
+  const [doc, setDoc] = useState(html);
+  const stepRef = useRef(step); stepRef.current = step;
+  useLayoutEffect(() => {
+    const el = box.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => setW(el.clientWidth));
+    ro.observe(el);
+    setW(el.clientWidth);
+    return () => ro.disconnect();
+  }, []);
+  useEffect(() => { const t = setTimeout(() => setDoc(html), 450); return () => clearTimeout(t); }, [html]);
+  const goStep = () => { try { frame.current.contentWindow.postMessage({ cmv: 'go', step: stepRef.current }, '*'); } catch (e) {} };
+  useEffect(goStep, [step]);
+  const k = w ? w / PREV_W : 0;
+  return (
+    <div className="vis-prev" ref={box} style={{ height: k ? Math.round(PREV_H * k) : 320 }}>
+      {k > 0 && <iframe ref={frame} title="설명 자료 미리보기" sandbox="allow-scripts" srcDoc={doc} onLoad={goStep} style={{ width: PREV_W, height: PREV_H, transform: 'scale(' + k + ')' }} />}
+    </div>
+  );
+}
+
+function VisualEditor({ vis, setVis, built }) {
+  const [sel, setSel] = useState(vis.steps && vis.steps.length ? 0 : 'fig');
+  const enRef = useRef(null);
+  const steps = vis.steps || [];
+  const isStep = typeof sel === 'number' && steps[sel];
+  const s = isStep ? steps[sel] : null;
+  const setStep = (patch) => setVis({ ...vis, steps: steps.map((x, j) => (j === sel ? { ...x, ...patch } : x)) });
+  const mark = () => {
+    const ta = enRef.current;
+    if (!ta || !s) return;
+    const r = toggleMark(s.en, ta.selectionStart, ta.selectionEnd);
+    if (!r) { ta.focus(); return; }
+    setStep({ en: r.value });
+    requestAnimationFrame(() => { try { ta.focus(); ta.setSelectionRange(r.a, r.b); } catch (e) {} });
+  };
+  const previewStep = isStep ? sel + 1 : Math.max(1, steps.length);
+  const field = (k, props) => ({ value: s[k], onChange: (e) => setStep({ [k]: e.target.value }), ...props });
+  return (
+    <section className="ed-form ed-vis" aria-label="설명 자료 편집">
+      <label className="field"><span>창 제목 <em>· 설명 자료 창 위에 ‘번호 · 제목’으로 나옵니다</em></span>
+        <input className="inp" type="text" value={vis.title} onChange={(e) => setVis({ ...vis, title: e.target.value })} />
+      </label>
+      <div className="ed-vis-row">
+        <div className="ed-list vis-list">
+          <div className="lbl">{steps.length ? '단계 ' + steps.length + '개' : '단계'}</div>
+          {steps.map((x, k) => (
+            <button key={k} type="button" className="ed-item" aria-pressed={sel === k} onClick={() => setSel(k)}>
+              <span className="n">{k + 1}</span><span className="t">{x.title || '(제목 없음)'}</span>
+            </button>
+          ))}
+          <button type="button" className="ed-item" aria-pressed={sel === 'fig'} onClick={() => setSel('fig')}>
+            <span className="n"><Icon name="screen" size={17} /></span><span className="t">그림 글자</span><span className="k">{vis.figs.length}</span>
+          </button>
+          <p className="ed-note">단계를 늘리거나 줄이면 그림이 어긋나서 여기서는 글만 고칩니다.</p>
+        </div>
+        <div className="vis-body">
+          {!vis.steps && sel !== 'fig' && <p className="ed-note">예전 형식의 설명 자료라 단계 글은 고칠 수 없습니다. 창 제목과 그림 글자는 고칠 수 있습니다.</p>}
+          {s && (
+            <>
+              <div className="ed-form-head"><b>{sel + 1}단계</b></div>
+              <div className="vis-two">
+                <label className="field"><span>지문 문장 위치</span><input className="inp" type="text" placeholder="예: 3~4번째 문장" {...field('ref')} /></label>
+                <label className="field"><span>제목 <em>· 우리말</em></span><input className="inp" type="text" {...field('title')} /></label>
+              </div>
+              <div className="field">
+                <div className="ed-mark">
+                  <span style={{ fontSize: 15, fontWeight: 600 }}>영어 문장 <em style={{ fontStyle: 'normal', fontWeight: 500, color: 'var(--muted)' }}>· {wordCount(s.en)}단어</em></span>
+                  <button type="button" className="btn hl" style={{ height: 40, borderRadius: 10, fontSize: 14, padding: '0 14px' }} onMouseDown={(e) => e.preventDefault()} onClick={mark}>형광펜</button>
+                </div>
+                <textarea ref={enRef} className="inp" rows={4} lang="en" aria-label="영어 문장" {...field('en')} />
+                <span className="ed-note">[[ ]] 안이 형광펜입니다. 글자를 골라 [형광펜]을 누르면 칠하고, 칠한 곳을 골라 누르면 지웁니다.</span>
+              </div>
+              <label className="field"><span>우리말 정리</span><textarea className="inp" rows={3} {...field('ko')} /></label>
+            </>
+          )}
+          {sel === 'fig' && (
+            <div className="field">
+              <span>그림 글자 <em>· 길게 바꾸면 그림이 좁아질 수 있으니 미리보기로 확인하세요</em></span>
+              <div className="fig-rows">
+                {vis.figs.map((f, k) => (
+                  <label className="fig-row" key={k}>
+                    <span className="k">{f.label}</span>
+                    <input className="inp" type="text" aria-label={'그림 글자 ' + (k + 1)} value={f.value} onChange={(e) => setVis({ ...vis, figs: vis.figs.map((x, j) => (j === k ? { ...x, value: e.target.value } : x)) })} />
+                  </label>
+                ))}
+                {!vis.figs.length && <p className="ed-note">그림에 글자가 없습니다.</p>}
+              </div>
+            </div>
+          )}
+          <div className="vis-prev-head"><span>미리보기 · {previewStep}단계</span><span>칠판 화면을 줄여서 보여 줍니다</span></div>
+          <VisualPreview html={built} step={previewStep} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ───────── 수정 화면 ───────── */
 function AuthModal({ onOk, onCancel }) {
   const [v, setV] = useState('');
@@ -1689,7 +1872,7 @@ function AuthModal({ onOk, onCancel }) {
     <div className="modal-bg">
       <form className="modal" onSubmit={submit}>
         <h2><Icon name="lock" size={24} />선생님 모드</h2>
-        <p>정리와 퀴즈를 고치려면 비밀번호를 입력하세요.</p>
+        <p>정리·퀴즈·설명 자료를 고치려면 비밀번호를 입력하세요.</p>
         <label className="field">
           <span>비밀번호</span>
           <input className="inp" type="password" autoFocus value={v} onChange={(e) => setV(e.target.value)} autoComplete="current-password" />
@@ -1723,13 +1906,16 @@ function Editor({ p, which, onSaved }) {
   const [tab, setTab] = useState(which);
   const exFile = useFile(p.files.explain);
   const qzFile = useFile(p.files.quiz);
+  const visFile = useFile(p.files.visual);
   const [ex, setEx] = useState(null);
   const [qs, setQs] = useState(null);
+  const [vis, setVis] = useState(null);
+  const visText = useRef('');
   const [sel, setSel] = useState(0);
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState(null);
   const [leaving, setLeaving] = useState(false);
-  const orig = useRef({ ex: null, qs: null });
+  const orig = useRef({ ex: null, qs: null, vis: null });
 
   useEffect(() => {
     if (ex) return;
@@ -1752,15 +1938,26 @@ function Editor({ p, which, onSaved }) {
     setQs(q);
   }, [qzFile.status]);
 
+  useEffect(() => {
+    if (vis || !p.files.visual || visFile.status !== 'ok') return;
+    visText.current = visFile.data.text;
+    const v = parseVisual(visFile.data.text);
+    orig.current.vis = buildVisual(visFile.data.text, v);
+    setVis(v);
+  }, [visFile.status]);
+  const built = useMemo(() => (vis ? buildVisual(visText.current, vis) : ''), [vis]);
+  const dirtyVis = !!vis && built !== orig.current.vis;
+
   const dirtyEx = !!ex && serializeExplain(ex) !== orig.current.ex;
   const dirtyQz = !!qs && serializeQuiz(qs) !== orig.current.qs;
-  const back = () => nav('p/' + enc(p.id) + '/' + tab, true);
-  const tryLeave = () => { if (dirtyEx || dirtyQz) setLeaving(true); else back(); };
+  const back = () => nav('p/' + enc(p.id) + '/' + (tab === 'visual' ? 'pdf/visual' : tab), true);
+  const tryLeave = () => { if (dirtyEx || dirtyQz || dirtyVis) setLeaving(true); else back(); };
 
   const save = async () => {
     const jobs = [];
     if (dirtyEx) jobs.push(['explain', serializeExplain(ex), 'ex']);
     if (dirtyQz) jobs.push(['quiz', serializeQuiz(qs), 'qs']);
+    if (dirtyVis) jobs.push(['visual', built, 'vis']);
     if (!jobs.length) { setMsg({ kind: '', text: '바뀐 내용이 없습니다.' }); return; }
     setSaving(true); setMsg(null);
     let created = false;
@@ -1771,6 +1968,7 @@ function Editor({ p, which, onSaved }) {
         fileCache.put(r.file.id, r.file.updated, { text: content });
         onSaved(p.id, kind, r.file);
         orig.current[key] = content;
+        if (key === 'vis') visText.current = content;
         if (r.created) created = true;
       }
       setMsg({ kind: 'ok', text: created ? '저장했습니다. 드라이브에 새 파일을 만들었습니다.' : '저장했습니다. 고치기 전 내용은 드라이브의 ‘_이전’ 폴더에 보관했습니다.' });
@@ -1807,6 +2005,7 @@ function Editor({ p, which, onSaved }) {
         <div className="seg" role="group" aria-label="수정할 자료">
           <button type="button" className="seg-btn" aria-pressed={tab === 'explain'} onClick={() => setTab('explain')}><Icon name="bulb" size={18} />정리{dirtyEx ? ' •' : ''}</button>
           <button type="button" className="seg-btn" aria-pressed={tab === 'quiz'} onClick={() => setTab('quiz')}><Icon name="checkCircle" size={18} />퀴즈{dirtyQz ? ' •' : ''}</button>
+          {p.files.visual && <button type="button" className="seg-btn" aria-pressed={tab === 'visual'} onClick={() => setTab('visual')}><Icon name="screen" size={18} />자료{dirtyVis ? ' •' : ''}</button>}
         </div>
         <div className="side end">
           <button type="button" className="btn" onClick={tryLeave} style={{ padding: '0 20px' }}>취소</button>
@@ -1856,6 +2055,14 @@ function Editor({ p, which, onSaved }) {
                 </button>
               </div>
             </section>
+          </main>
+        )}
+
+        {!loading && tab === 'visual' && (
+          <main className="ed-main">
+            {vis && <VisualEditor vis={vis} setVis={setVis} built={built} />}
+            {!vis && visFile.status !== 'error' && <div style={{ position: 'relative', height: 300 }}><Loading text="설명 자료를 불러오는 중" /></div>}
+            {!vis && visFile.status === 'error' && <div style={{ position: 'relative', height: 300 }}><Problem title="설명 자료를 열지 못했습니다" error={visFile.error} /></div>}
           </main>
         )}
 
