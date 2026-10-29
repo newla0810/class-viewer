@@ -86,7 +86,7 @@ a{color:inherit}
 .rb .nn{font-family:var(--mono);font-size:15px;font-weight:600;color:var(--ink);line-height:1}
 .rb:disabled .nn{color:var(--disabled)}
 .rail hr{flex:none;width:32px;margin:4px 0;border:0;border-top:1px solid var(--line)}
-.rail-open{position:absolute;right:0;top:58%;transform:translateY(-50%);z-index:20;width:44px;height:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid var(--line);border-right:0;border-radius:12px 0 0 12px;background:rgba(255,255,255,.96);box-shadow:0 6px 20px rgba(18,20,23,.14);color:var(--ink);font-size:11px;font-weight:600;cursor:pointer}
+.rail-open{position:absolute;right:0;top:58%;transform:translateY(-50%);z-index:20;width:40px;height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid var(--line);border-right:0;border-radius:12px 0 0 12px;background:rgba(255,255,255,.96);box-shadow:0 6px 20px rgba(18,20,23,.14);color:var(--ink);font-size:11px;font-weight:600;cursor:pointer}
 @media (max-height:720px){
   .titlebar{height:44px}.titlebar .tnum{font-size:24px}.titlebar .ttitle{font-size:19px}.titlebar .tsub{font-size:14px}
   .rb.tab{min-height:46px}.rb{min-height:40px;gap:2px}.rail hr{margin:2px 0}.rail .grow.lo{flex:.2 1 0}
@@ -986,8 +986,8 @@ function Passage({ p, route }) {
           {tab === 'explain' && <ExplainView key={p.id} p={p} info={f.explain} onVisual={f.visual ? () => setVisual(true) : null} />}
           {tab === 'quiz' && <QuizView key={p.id} info={f.quiz} />}
           {railOff && (
-            <button type="button" className="rail-open" aria-label="메뉴 펼치기" onClick={() => setRailOff(false)}>
-              <Icon name="back" size={18} stroke={2.2} />메뉴
+            <button type="button" className="rail-open" aria-label="메뉴 펼치기" title="메뉴 펼치기" onClick={() => setRailOff(false)}>
+              <Icon name="back" size={22} stroke={2.2} />
             </button>
           )}
         </div>
