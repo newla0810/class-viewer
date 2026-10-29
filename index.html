@@ -72,10 +72,12 @@ a{color:inherit}
 .titlebar .tsub{flex:0 1000 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;padding-top:3px;font-size:15px;font-weight:500;color:var(--muted)}
 .pas-row{flex:1 1 0;min-height:0;display:flex}
 .pas-main{position:relative;flex:1 1 0;min-width:0;display:flex;flex-direction:column}
-.rail{flex:none;width:60px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 5px 10px;background:var(--surface);border-left:1px solid var(--line);overflow-y:auto}
+.rail{flex:none;width:60px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 5px 10px;background:var(--surface);border-left:1px solid var(--line);overflow-x:hidden;overflow-y:auto;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rb.ic{min-height:40px}
 .rail .grow{flex:1 1 0}
 .rail .grow.lo{flex:.45 1 0}
-.rb{flex:none;width:50px;min-height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:4px 1px;border:0;border-radius:11px;background:transparent;color:var(--ink2);font-size:11px;font-weight:600;line-height:1.1;letter-spacing:-.02em;cursor:pointer;text-decoration:none;text-align:center;white-space:nowrap}
+.rb{flex:none;width:48px;min-height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:4px 1px;border:0;border-radius:11px;background:transparent;color:var(--ink2);font-size:11px;font-weight:600;line-height:1.1;letter-spacing:-.02em;cursor:pointer;text-decoration:none;text-align:center;white-space:nowrap}
 @media (hover:hover){.rb:hover:not(:disabled):not([aria-current]):not(.hl){background:var(--soft)}}
 .rb:disabled{color:var(--disabled);cursor:default}
 .rb.tab{min-height:52px;font-size:12px}
@@ -769,7 +771,7 @@ function FullscreenButton({ rail }) {
     const p = document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
     if (p && p.catch) p.catch(() => {});
   };
-  if (rail) return <button type="button" className="rb" aria-label={on ? '전체 화면 끝내기' : '전체 화면'} onClick={toggle}><Icon name={on ? 'shrink' : 'full'} size={17} />{on ? '작게' : '전체 화면'}</button>;
+  if (rail) return <button type="button" className="rb ic" aria-label={on ? '전체 화면 끝내기' : '전체 화면'} title={on ? '전체 화면 끝내기' : '전체 화면'} onClick={toggle}><Icon name={on ? 'shrink' : 'full'} size={20} /></button>;
   return (
     <button type="button" className="sq-btn" aria-label={on ? '전체 화면 끝내기' : '전체 화면'} onClick={toggle}>
       <Icon name={on ? 'shrink' : 'full'} size={22} />
@@ -1000,8 +1002,8 @@ function Passage({ p, route }) {
             {f.visual && (
               <>
                 <hr />
-                <button type="button" className={'rb tab' + (visualOpen ? ' hl' : '')} aria-pressed={visualOpen} onClick={() => setVisual(!visualOpen)}>
-                  <Icon name="screen" size={19} />설명 자료
+                <button type="button" className={'rb tab' + (visualOpen ? ' hl' : '')} aria-label="설명 자료" title="설명 자료" aria-pressed={visualOpen} onClick={() => setVisual(!visualOpen)}>
+                  <Icon name="screen" size={19} />자료
                 </button>
               </>
             )}
@@ -1014,10 +1016,10 @@ function Passage({ p, route }) {
             </button>
             <div className="grow lo" />
             {(tab === 'explain' || tab === 'quiz') && (
-              <button type="button" className="rb" onClick={() => nav('edit/' + enc(p.id) + '/' + tab, true)}><Icon name="pencil" size={17} />수정</button>
+              <button type="button" className="rb ic" aria-label="수정" title="수정" onClick={() => nav('edit/' + enc(p.id) + '/' + tab, true)}><Icon name="pencil" size={20} /></button>
             )}
             <FullscreenButton rail />
-            <button type="button" className="rb" aria-label="메뉴 접기" onClick={() => setRailOff(true)}><Icon name="dbl" size={17} stroke={2.2} />접기</button>
+            <button type="button" className="rb ic" aria-label="메뉴 접기" title="메뉴 접기" onClick={() => setRailOff(true)}><Icon name="dbl" size={20} stroke={2.2} /></button>
           </nav>
         )}
       </div>
