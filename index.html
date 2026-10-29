@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>영어 수업자료</title>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADbklEQVR4AexWSUxTURQ971MiGhxoya9xwqhJcYjoxoHowhiHlRttHOMQE5EFGmOqbNRojAOOiRtFceHAQklcEFhoNAaMRl3YiBiNmDBECC1liiBQ2ue9D63weQwKNC74eff3vXvPPef2tv23BiyX3e5clpBo3iArSnA46+yJTjkUYw7FZTevM7dFDt0LiEtwmOelkC8ExD6ylULAYU342zNzKC5DpDE3aZwjjlgytVQBkyaZKXaH6RVCHCGLUZERuDE32VHqyFvWZAlVgIjBVgjhYkc0jDqSojRJzLDbzVR69ZBFe3m4C4YEdlJbVCeiWQFrCgPpBm0WRVO4h5YhkqkDMrmHM4oHAZnMHZio07TZgNTF8fDsmYzrx2fiwcU5OJ0xDbs2JGKRa1yvFPZxjDGM5RzOZQ7m6pWgHMKp/ezHjzPwJncB8q+5kLl3KtxrHVi9bCLSNztx+UgSnubMxct783Bwh0nmVHv2cYwxjHVTDucyx6u78zE2TivV40GkauLb7OlxSJoyBsFgGO8/t+Dh4wCu3KlBbmEdnr1uQmdnGK6ZY3F8/zRlLtp3dIRV7H6BX2HzngRULmNnEd+cGWOYupfpy/oFi401kHGuAvtPleN0djUyzlTAfbgMCzeWoLC4gVCCDMh/Xo8Ud4mKHThbqbBpJ8txKKsSNluXhKSfmwJbbl1Ri7P7McboEunuqw10kmhjxFVQ1AQf+SIOzUbHw7ABC2DQSNpoAaMdGO3A/9+BNLc54DAKhqQaUNZhlL7FjDxCQmH9o3DADmxe79AOo6xD0yPkVzwz1ICyDqNNaxwRTF8bbQHf/O1o/RHqdxiNj//z33VCvA39DaOW1hCqfUFtDVSArLVG/PUhLN1eiqR1Xqza+0k7jG4/8lMat1XiZp5PO4w4lzmWbitFfVMn4a1L1hqQ8EJzccXtHSzQO8jDyHOpCit3l2LJtg/IvFrV5zBqa5eoqdO/e9amv2TQFoBBXB/L2vG1smMQSD2E3p7XCAVlDs3qf2fRcw/CK7+T9i2judn/BQifGETGsELCYXGMtMvoSwg0BPwXJOS7YVXoh4y0vI31tdcYogqgTaihzpcqpTxPFqLziCzmJssireUkoHR+F0BntDUEfJlCihUyLG9QlcVSIsCBoRhzKC7IbOYmjaPE10am1k8AAAD//zVffL4AAAAGSURBVAMAfpuR452d40kAAAAASUVORK5CYII=">
+<link rel="icon" type="image/svg+xml" sizes="any" id="favicon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23121417%22/%3E%3Cg transform=%22translate(4 4.5)%22 fill=%22none%22 stroke=%22%23FFD84A%22 stroke-width=%222.4%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M3 5.5c2.6-1 5.6-.9 9 1v13c-3.4-1.9-6.4-2-9-1Z%22/%3E%3Cpath d=%22M21 5.5c-2.6-1-5.6-.9-9 1v13c3.4-1.9 6.4-2 9-1Z%22/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Nanum+Gothic+Coding:wght@400;700&display=swap">
@@ -38,38 +40,67 @@ a{color:inherit}
 .btn.big{height:60px;font-size:18px;border-radius:16px}
 .btn.ghost{border-style:dashed;border-width:1.5px;border-color:var(--line2);background:transparent;color:var(--ink2)}
 .sq-btn{flex:none;width:52px;height:52px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none}
-.sq-btn.sm{width:48px;height:48px;border-radius:12px}
+.sq-btn.sm{width:44px;height:44px;border-radius:12px}
 .sq-btn:disabled{color:var(--disabled);cursor:default}
 .spin{animation:spin .9s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* 위쪽 막대 */
-.topbar{flex:none;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 28px;background:var(--surface);border-bottom:1px solid var(--line)}
-.topbar .side{flex:1 1 320px;min-width:0;display:flex;align-items:center;gap:16px}
-.topbar .side.end{justify-content:flex-end;gap:8px;flex-wrap:wrap}
-.ptw{min-width:0;display:flex;align-items:center;gap:14px}
-.pnum{font-family:var(--mono);font-size:36px;font-weight:600;line-height:1;letter-spacing:-.04em}
-.pnames{min-width:0;display:flex;flex-direction:column;gap:3px}
-.ptitle{font-size:18px;font-weight:700;letter-spacing:-.015em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.psub{font-size:14px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* 위쪽 막대 (56px 한 줄) */
+.topbar{flex:none;height:56px;display:flex;align-items:center;gap:14px;padding:0 14px;background:var(--surface);border-bottom:1px solid var(--line)}
+.topbar .btn{height:44px;padding:0 14px;border-radius:12px;font-size:15px}
+.topbar .sq-btn{width:44px;height:44px;border-radius:12px}
+.topbar .side{flex:1 1 0;min-width:0;display:flex;align-items:center;gap:12px}
+.topbar .side.end{justify-content:flex-end;gap:6px;min-width:max-content}
+.ptw{flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.pnum{flex:none;font-family:var(--mono);font-size:26px;font-weight:600;line-height:1;letter-spacing:-.04em}
+.ptitle{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:17px;font-weight:700;letter-spacing:-.015em}
+.psub{flex:0 1000 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:14px;color:var(--muted)}
+.topbar .btn.nb{min-width:64px;font-variant-numeric:tabular-nums}
 .seg{flex:none;display:flex;gap:4px;padding:4px;border-radius:16px;background:var(--ground)}
 .seg.white{background:var(--surface);border:1px solid var(--line)}
-.seg-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;min-width:128px;padding:0 22px;border:0;border-radius:12px;background:transparent;color:var(--ink2);font-size:18px;font-weight:600;cursor:pointer;text-decoration:none}
+.seg-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;min-width:128px;padding:0 22px;border:0;border-radius:12px;background:transparent;color:var(--ink2);font-size:18px;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap}
 .seg-btn.sm{min-width:104px;padding:0 20px}
+.topbar .seg{gap:2px;padding:3px;border-radius:13px}
+.topbar .seg-btn{height:40px;min-width:92px;padding:0 16px;border-radius:10px;font-size:16px;gap:7px}
 .seg-btn[aria-pressed="true"],.seg-btn[aria-current="page"]{background:var(--ink);color:#fff}
 
+/* 수업 화면: 위 제목 줄 + 오른쪽 메뉴 */
+.titlebar{flex:none;height:76px;display:flex;align-items:center;gap:16px;padding:0 24px 0 14px;background:var(--surface);border-bottom:1px solid var(--line);white-space:nowrap}
+.titlebar .tnum{flex:none;font-family:var(--mono);font-size:44px;font-weight:600;line-height:1;letter-spacing:-.04em}
+.titlebar .ttitle{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:32px;font-weight:700;letter-spacing:-.02em}
+.titlebar .tsub{flex:0 1000 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;padding-top:6px;font-size:20px;font-weight:500;color:var(--muted)}
+.pas-row{flex:1 1 0;min-height:0;display:flex}
+.pas-main{position:relative;flex:1 1 0;min-width:0;display:flex;flex-direction:column}
+.rail{flex:none;width:88px;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 8px 12px;background:var(--surface);border-left:1px solid var(--line);overflow-y:auto}
+.rail .grow{flex:1 1 0}
+.rail .grow.lo{flex:.45 1 0}
+.rb{flex:none;width:72px;min-height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:6px 2px;border:0;border-radius:14px;background:transparent;color:var(--ink2);font-size:13px;font-weight:600;line-height:1.15;cursor:pointer;text-decoration:none;text-align:center}
+@media (hover:hover){.rb:hover:not(:disabled):not([aria-current]):not(.hl){background:var(--soft)}}
+.rb:disabled{color:var(--disabled);cursor:default}
+.rb.tab{min-height:76px;font-size:15px}
+.rb[aria-current="page"]{background:var(--ink);color:#fff}
+.rb.hl{background:var(--hl);color:var(--ink)}
+.rb .nn{font-family:var(--mono);font-size:19px;font-weight:600;color:var(--ink);line-height:1}
+.rb:disabled .nn{color:var(--disabled)}
+.rail hr{flex:none;width:44px;margin:6px 0;border:0;border-top:1px solid var(--line)}
+.rail-open{position:absolute;right:0;top:58%;transform:translateY(-50%);z-index:20;width:60px;height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line);border-right:0;border-radius:16px 0 0 16px;background:rgba(255,255,255,.96);box-shadow:0 6px 20px rgba(18,20,23,.14);color:var(--ink);font-size:13px;font-weight:600;cursor:pointer}
+@media (max-height:820px){
+  .titlebar{height:64px}.titlebar .tnum{font-size:36px}.titlebar .ttitle{font-size:26px}.titlebar .tsub{font-size:17px}
+  .rb.tab{min-height:60px;font-size:14px}.rb{min-height:50px;gap:3px}.rail hr{margin:3px 0}.rail .grow.lo{flex:.2 1 0}
+}
+
 /* 첫 화면 */
-.brand{display:flex;align-items:center;gap:14px}
-.brand-mark{width:44px;height:44px;border-radius:12px;background:var(--ink);display:flex;align-items:center;justify-content:center;color:var(--hl)}
-.brand-title{font-size:21px;font-weight:700;letter-spacing:-.01em}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:36px;height:36px;border-radius:10px;background:var(--ink);display:flex;align-items:center;justify-content:center;color:var(--hl)}
+.brand-title{font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
 .brand-title span{box-shadow:inset 0 -.38em 0 var(--hl)}
-.brand-sub{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--muted)}
-.home-top{padding:14px 48px}
-.sync{display:flex;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:999px;background:var(--ground);font-size:15px;color:var(--ink2);white-space:nowrap}
+.brand-sub{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--muted)}
+.topbar.home-top{justify-content:space-between;padding:0 16px 0 28px}
+.sync{display:flex;align-items:center;gap:8px;height:36px;padding:0 14px;border-radius:999px;background:var(--ground);font-size:14px;color:var(--ink2);white-space:nowrap}
 .sync i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
 .sync.err i{background:var(--bad)}
 .sync.busy i{background:var(--faint)}
-.home-main{width:100%;max-width:1344px;margin:0 auto;padding:40px 48px 36px;display:flex;flex-direction:column;gap:32px;min-height:100%}
+.home-main{width:100%;max-width:1344px;margin:0 auto;padding:36px 48px 36px;display:flex;flex-direction:column;gap:32px;min-height:100%}
 .hero{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .eyebrow{font-family:var(--mono);font-size:14px;font-weight:500;letter-spacing:.1em;color:var(--muted)}
 .hero h1{margin:6px 0 0;font-size:42px;font-weight:700;letter-spacing:-.025em;line-height:1.15}
@@ -83,15 +114,12 @@ a{color:inherit}
 .set-head .meta{font-size:15px;color:var(--muted)}
 .set-head a{display:inline-flex;align-items:center;gap:6px;height:44px;font-size:15px;font-weight:500;text-decoration:none}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
-.card{display:flex;flex-direction:column;gap:18px;min-height:268px;padding:26px;border-radius:20px;background:var(--surface);border:1px solid var(--line);color:var(--ink);text-decoration:none;text-align:left;cursor:pointer}
+.card{display:flex;flex-direction:column;gap:16px;min-height:200px;padding:24px 26px 28px;border-radius:20px;background:var(--surface);border:1px solid var(--line);color:var(--ink);text-decoration:none;text-align:left;cursor:pointer}
 .card:hover{border-color:var(--line2)}
 .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .card-num{font-family:var(--mono);font-size:60px;font-weight:600;line-height:.9;letter-spacing:-.04em}
 .chip-type{display:flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;border:1px solid var(--line2);font-size:15px;font-weight:500;color:var(--ink2);white-space:nowrap}
 .card-title{flex:1;font-size:21px;font-weight:600;line-height:1.45;letter-spacing:-.015em}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{display:inline-flex;align-items:center;gap:5px;height:32px;padding:0 11px;border-radius:9px;background:var(--ground);font-size:14px;font-weight:500}
-.chip.off{background:transparent;border:1px dashed var(--line2);color:var(--muted)}
 .card.add{justify-content:center;gap:10px;border:1.5px dashed var(--line2);background:transparent;color:var(--ink2);cursor:default}
 .card.add b{font-size:19px;font-weight:600;color:var(--ink)}
 .card.add p{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
@@ -99,38 +127,43 @@ a{color:inherit}
 .empty .ic{width:68px;height:68px;border-radius:50%;background:var(--ground);color:var(--ink2);display:flex;align-items:center;justify-content:center}
 .empty b{font-size:25px;font-weight:700;letter-spacing:-.015em}
 .empty p{margin:0;font-size:17px;line-height:1.65;color:var(--muted)}
-.empty code{margin-top:6px;padding:10px 16px;border-radius:10px;background:var(--ground);font-family:var(--mono),var(--sans);font-size:15px;color:var(--ink2)}
-.foot{flex:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:16px 48px;background:var(--surface);border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
+.empty code{margin-top:6px;padding:10px 16px;border-radius:10px;background:var(--ground);font-family:var(--sans);font-size:15px;color:var(--ink2)}
+.foot{flex:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:14px 48px;background:var(--surface);border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
 .foot strong{font-weight:600;color:var(--ink)}
 
 /* 지문 PDF */
 .stage{flex:1 1 0;min-height:0;display:flex;background:var(--stage)}
 .pdf-area{position:relative;flex:1 1 0;min-width:0}
-.pdf-area.with-panel{flex:0 0 36%}
 .pdf-scroll{position:absolute;inset:0;overflow:auto;touch-action:pan-x pan-y;-webkit-overflow-scrolling:touch}
-.pdf-sheet{min-width:100%;width:max-content;min-height:100%;padding:32px 32px 132px}
+.pdf-sheet{min-width:100%;width:max-content;min-height:100%;padding:24px 24px 40px}
 .pdf-stack{margin:0 auto;width:max-content;display:flex;flex-direction:column;gap:16px;transform-origin:0 0}
 .pdf-page{position:relative;background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 1px 2px rgba(18,20,23,.08),0 14px 36px rgba(18,20,23,.12)}
 .pdf-page canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hint{position:absolute;top:20px;right:24px;display:flex;align-items:center;gap:10px;height:44px;padding:0 18px 0 14px;border-radius:999px;background:rgba(18,20,23,.84);color:#fff;font-size:15px;pointer-events:none;transition:opacity .5s ease}
+.hint{position:absolute;top:16px;right:20px;display:flex;align-items:center;gap:10px;height:42px;padding:0 18px 0 14px;border-radius:999px;background:rgba(18,20,23,.84);color:#fff;font-size:15px;white-space:nowrap;pointer-events:none;transition:opacity .5s ease}
 .hint.gone{opacity:0}
-.dock{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);display:flex;align-items:center;gap:4px;padding:6px;border-radius:22px;background:var(--surface);border:1px solid var(--line);box-shadow:0 2px 4px rgba(18,20,23,.06),0 14px 36px rgba(18,20,23,.16);white-space:nowrap}
-.dock button{display:flex;align-items:center;justify-content:center;gap:8px;height:56px;min-width:56px;padding:0;border:0;border-radius:16px;background:transparent;color:var(--ink);font-size:17px;font-weight:600;cursor:pointer}
-.dock button.wide{padding:0 18px}
+.dock{position:absolute;right:16px;top:58%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px;border-radius:16px;background:var(--surface);border:1px solid var(--line);box-shadow:0 2px 4px rgba(18,20,23,.06),0 12px 30px rgba(18,20,23,.16);white-space:nowrap;transition:opacity .22s ease,transform .22s ease}
+.dock.hide{opacity:0;transform:translate(12px,-50%);pointer-events:none}
+.dock button{display:flex;align-items:center;justify-content:center;height:44px;min-width:44px;padding:0;border:0;border-radius:12px;background:transparent;color:var(--ink);cursor:pointer}
 .dock button[aria-pressed="true"]{background:var(--hl)}
-.dock .pct{min-width:70px;text-align:center;font-family:var(--mono);font-size:18px;font-weight:600}
-.dock .sep{width:1px;height:32px;margin:0 4px;background:var(--line)}
-.dock .pages{padding:0 14px 0 8px;font-family:var(--mono);font-size:16px;font-weight:500;color:var(--muted)}
+.dock .pct{width:52px;padding:6px 0;text-align:center;font-family:var(--mono);font-size:14px;font-weight:600}
+.dock .sep{width:28px;height:1px;margin:4px 0;background:var(--line)}
+.dock .pages{width:52px;padding:4px 0 6px;text-align:center;font-size:13px;font-weight:500;line-height:1.3;white-space:normal;font-variant-numeric:tabular-nums;color:var(--muted)}
 .center-msg{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--ink2);font-size:17px;text-align:center;padding:24px}
 .center-msg small{color:var(--muted);font-size:14px}
-.visual-panel{position:relative;flex:1 1 0;min-width:0;background:var(--surface);border-left:1px solid var(--line)}
-.visual-panel iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.panel-close{position:absolute;top:30px;right:28px;z-index:2}
+.vm-bg{position:fixed;inset:0;z-index:40;display:flex;padding:20px;background:rgba(18,20,23,.55)}
+.vm{flex:1;min-width:0;display:flex;flex-direction:column;border-radius:24px;background:var(--surface);box-shadow:0 24px 64px rgba(18,20,23,.35);overflow:hidden}
+.vm-head{flex:none;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 10px 0 22px;border-bottom:1px solid var(--line)}
+.vm-head .t{min-width:0;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.vm-head .t b{font-size:18px;font-weight:700}
+.vm-head .t span{min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:15px;color:var(--muted)}
+.vm-head .btn{height:44px;padding:0 16px 0 12px;border-radius:12px;font-size:15px}
+.vm-body{position:relative;flex:1;min-height:0}
+.vm-body iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
-/* 해설 */
-.ex-main{width:100%;max-width:1280px;margin:0 auto;padding:40px 40px 72px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:28px}
-.ex-art{flex:999 1 640px;min-width:0;padding:56px 64px 64px;border-radius:24px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:2.8em}
-.ex-art .eyebrow2{font-family:var(--mono),var(--sans);font-size:.7em;font-weight:500;letter-spacing:.08em;color:var(--muted)}
+/* 정리 */
+.ex-main{width:100%;padding:32px 16px 72px 28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1180px) minmax(76px,1fr);column-gap:18px;align-items:start}
+.ex-art{grid-column:2;min-width:0;padding:52px 60px 60px;border-radius:24px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:2.8em}
+.ex-art .eyebrow2{font-size:.75em;font-weight:600;color:var(--muted)}
 .ex-art h1{margin:0;font-size:1.9em;font-weight:700;line-height:1.3;letter-spacing:-.025em}
 .ex-sec{display:flex;flex-direction:column;gap:1em;scroll-margin-top:24px}
 .ex-sec-head{display:flex;align-items:center;justify-content:space-between;gap:1em;flex-wrap:wrap}
@@ -138,10 +171,10 @@ a{color:inherit}
 .ex-sec h2 span{font-family:var(--mono);font-size:.72em;font-weight:600;color:var(--muted)}
 .ex-box{padding:1.1em 1.3em;border-radius:16px;background:var(--soft);font-size:1.15em;font-weight:600;line-height:1.7;letter-spacing:-.01em}
 .ex-box mark{background:none;box-shadow:inset 0 -.42em 0 var(--hl);color:inherit;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.ex-topic{margin:0;padding:1.1em 1.3em;border-radius:16px;border:1px solid var(--line);font-size:1.2em;font-weight:500;line-height:1.6}
+.ex-topic{margin:0;padding:1.1em 1.3em;border-radius:16px;border:1px solid var(--line);font-size:1.2em;font-weight:500;line-height:1.6;white-space:pre-line}
 .ex-flow{overflow-x:auto;padding:1.4em 1.6em;border-radius:16px;background:var(--soft);border:1px solid #E6E8EC;font-family:var(--code);font-size:.95em;line-height:1.8;white-space:pre;margin:0}
-.ex-answer{display:flex;gap:1.1em;align-items:flex-start;padding:1.2em 1.4em;border-radius:16px;background:var(--hl)}
-.ex-answer .n{flex:none;font-family:var(--mono),var(--sans);font-size:1.6em;font-weight:600;line-height:1.15}
+.ex-answer{display:flex;gap:1em;align-items:flex-start;padding:1.2em 1.4em;border-radius:16px;background:var(--hl)}
+.ex-answer .n{flex:none;width:1.8em;height:1.8em;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.15em;font-weight:700;line-height:1}
 .ex-answer .en{font-size:1.05em;font-weight:600;line-height:1.5}
 .ex-answer .ko{font-size:.9em;line-height:1.6}
 .ex-label{font-size:.75em;font-weight:600;color:var(--muted)}
@@ -150,32 +183,38 @@ a{color:inherit}
 .ex-hidden{display:flex;flex-direction:column;align-items:center;gap:.5em;padding:2.2em 1.4em;border-radius:16px;border:1.5px dashed var(--line2);text-align:center}
 .ex-hidden b{font-size:1.05em}
 .ex-hidden span{font-size:.85em;color:var(--muted)}
-.ex-side{flex:1 1 240px;display:flex;flex-direction:column;gap:16px}
-.box{padding:12px;border-radius:20px;background:var(--surface);border:1px solid var(--line)}
-.box-label{padding:8px 12px 10px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted)}
-.toc button{width:100%;display:flex;align-items:center;gap:12px;height:48px;padding:0 12px;border:0;border-radius:12px;background:transparent;font-size:16px;font-weight:500;text-align:left;cursor:pointer}
-.toc button:hover{background:var(--ground)}
-.toc span{font-family:var(--mono);font-size:13px;color:var(--muted)}
-.fs{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 12px 12px}
-.fs button{width:60px;height:56px;border-radius:14px;border:1px solid var(--line);background:var(--surface);font-weight:600;cursor:pointer}
-.fs .v{font-family:var(--mono);font-size:18px;font-weight:600}
+.ex-rail{grid-column:3;justify-self:end;width:76px;position:sticky;top:max(24px,calc(50vh - 330px));display:flex;flex-direction:column;gap:2px;padding:6px;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+.ex-rail .sec{width:100%;height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0 4px;border:0;border-radius:12px;background:transparent;color:var(--ink2);cursor:pointer}
+.ex-rail .sec b{font-family:var(--mono);font-size:15px;font-weight:600;line-height:1}
+.ex-rail .sec span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;font-weight:500;color:var(--muted)}
+.ex-rail .sec:hover{background:var(--soft)}
+.ex-rail .sec[aria-current="true"]{background:var(--ink);color:#fff}
+.ex-rail .sec[aria-current="true"] span{color:rgba(255,255,255,.8)}
+.ex-rail hr{width:36px;margin:6px auto;border:0;border-top:1px solid var(--line)}
+.ex-rail .fsb{width:100%;height:52px;border:0;border-radius:12px;background:transparent;color:var(--ink);font-weight:700;cursor:pointer}
+.ex-rail .fsb:hover:not(:disabled){background:var(--soft)}
+.ex-rail .fsb:disabled{color:var(--disabled);cursor:default}
+.ex-rail .fsv{padding:2px 0;text-align:center;font-family:var(--mono);font-size:13px;font-weight:600;color:var(--muted)}
 
-/* 형성평가 */
-.qz-main{flex:1;width:100%;max-width:1320px;margin:0 auto;padding:32px 40px;display:flex;flex-wrap:wrap;align-items:stretch;gap:28px}
-.qz-left{flex:999 1 640px;min-width:0;display:flex;flex-direction:column;gap:24px}
+/* 퀴즈 */
+.qz-main{flex:1;width:100%;max-width:1600px;margin:0 auto;padding:28px 36px;display:flex;flex-wrap:wrap;align-items:stretch;gap:28px}
+.qz-left{flex:999 1 640px;min-width:0;display:flex;flex-direction:column;gap:22px}
 .qz-prog{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.qz-prog .lbl{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.08em;color:var(--muted)}
-.qz-prog .num{font-family:var(--mono);font-size:22px;font-weight:600}
+.qz-prog .l{display:flex;align-items:center;gap:14px}
+.qz-type{display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;background:var(--ink);color:#fff;font-size:15px;font-weight:600;white-space:nowrap}
+.qz-prog .num{font-family:var(--mono);font-size:20px;font-weight:600}
 .qz-prog .num span{color:var(--muted)}
-.segs{display:flex;gap:6px;width:260px}
+.segs{display:flex;gap:6px;width:240px}
 .segs i{flex:1;height:8px;border-radius:4px;background:var(--line)}
 .segs i.done{background:var(--ink)}
 .segs i.cur{background:var(--hl)}
-.qz-q{margin:0;font-size:31px;font-weight:700;line-height:1.45;letter-spacing:-.02em}
-.qz-quote{padding:16px 22px;border-radius:14px;background:var(--surface);border:1px solid var(--line);font-size:22px;font-weight:500;line-height:1.6;white-space:pre-line}
+.qz-q{margin:0;font-size:30px;font-weight:700;line-height:1.45;letter-spacing:-.02em}
+.qz-quote{padding:16px 22px;border-radius:14px;background:var(--surface);border:1px solid var(--line);font-size:24px;font-weight:500;line-height:1.55;white-space:pre-line}
+.qz-hint{display:flex;gap:14px;align-items:baseline;padding:16px 22px;border-radius:14px;background:var(--hl-soft);font-size:22px;font-weight:500;line-height:1.5}
+.qz-hint small{flex:none;font-size:15px;font-weight:600;color:var(--ink2)}
 .opts{display:flex;flex-direction:column;gap:12px}
-.opt{display:flex;align-items:center;gap:18px;min-height:66px;padding:10px 22px 10px 14px;border-radius:16px;border:2px solid var(--line);background:var(--surface);color:var(--ink);font-size:22px;font-weight:500;line-height:1.45;text-align:left;cursor:pointer}
-.opt .c{flex:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ground);font-family:var(--mono),var(--sans);font-size:18px;font-weight:600}
+.opt{display:flex;align-items:center;gap:18px;min-height:72px;padding:12px 22px 12px 16px;border-radius:16px;border:2px solid var(--line);background:var(--surface);color:var(--ink);font-size:24px;font-weight:500;line-height:1.45;text-align:left;cursor:pointer}
+.opt .c{flex:none;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ground);font-size:20px;font-weight:600;line-height:1}
 .opt .t{flex:1}
 .opt.picked{border-color:var(--ink)}
 .opt.picked .c{background:var(--ink);color:#fff}
@@ -188,38 +227,65 @@ a{color:inherit}
 .tag{flex:none;display:flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:999px;font-size:15px;font-weight:600}
 .tag.ok{background:var(--ink);color:#fff}
 .tag.no{border:1.5px solid var(--faint);color:var(--ink2)}
+.tf{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tf button{position:relative;height:172px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:20px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tf b{font-size:72px;font-weight:700;line-height:1}
+.tf small{font-size:18px;font-weight:500;color:var(--muted)}
+.tf button.picked{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.tf button.right{background:var(--hl);border-color:var(--hl)}
+.tf button.right small{color:var(--ink2)}
+.tf button.wrong{background:var(--ground);border-color:var(--line2);color:var(--ink2)}
+.tf button.dim{color:var(--disabled)}
+.tf .tag{position:absolute;top:14px;right:14px}
+.qz-blank{display:flex;align-items:center;min-height:92px;padding:0 24px;border-radius:16px;border:2px dashed var(--line2);font-size:16px;font-weight:600;color:var(--faint)}
+.qz-blank.tall{min-height:150px;align-items:flex-start;padding-top:18px}
+.qz-answer{display:flex;flex-direction:column;gap:8px;padding:20px 26px;border-radius:16px;background:var(--hl)}
+.qz-answer small{font-size:15px;font-weight:600;color:var(--ink2)}
+.qz-answer b{font-size:34px;font-weight:700;line-height:1.35;letter-spacing:-.01em}
+.qz-answer.long b{font-size:24px;font-weight:500;line-height:1.6;white-space:pre-line}
 .qz-side{flex:1 1 340px;display:flex;flex-direction:column;gap:20px;padding:28px;border-radius:24px;background:var(--surface);border:1px solid var(--line)}
 .qz-side .grow{flex:1;display:flex;flex-direction:column;gap:20px}
-.qz-side .center{justify-content:center;gap:18px}
+.qz-side .center{justify-content:center;gap:12px}
 .qz-side p{margin:0;font-size:15px;line-height:1.65;color:var(--muted)}
 .reveal{display:flex;align-items:center;justify-content:center;gap:10px;height:76px;border:0;border-radius:18px;background:var(--ink);color:#fff;font-size:23px;font-weight:700;cursor:pointer}
 .ans{display:flex;align-items:center;gap:16px}
-.ans .n{flex:none;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--hl);font-family:var(--mono),var(--sans);font-size:28px;font-weight:600}
+.ans .n{flex:none;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--hl);font-size:28px;font-weight:700;line-height:1}
 .ans small{display:block;font-size:14px;font-weight:600;color:var(--muted)}
 .ans b{display:block;font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.01em}
 .ev small{display:block;margin-bottom:8px;font-size:14px;font-weight:600;color:var(--muted)}
 .ev div{padding:14px 16px;border-radius:12px;background:var(--soft);font-size:17px;font-weight:500;line-height:1.6;white-space:pre-line}
+.rubric{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.rubric li{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:var(--soft);font-size:17px;font-weight:500;line-height:1.5}
+.rubric li svg{flex:none;margin-top:3px}
 .why{font-size:17px;line-height:1.7;color:var(--ink2);white-space:pre-line}
 .qz-nav{display:flex;gap:10px}
 .qz-nav .btn{flex:1}
 .qz-nav .btn.next{flex:1.4}
 
 /* 수정 */
-.badge{display:inline-flex;align-items:center;gap:5px;height:28px;padding:0 10px;border-radius:999px;background:var(--hl);font-size:13px;font-weight:600}
+.badge{display:inline-flex;align-items:center;gap:5px;height:28px;padding:0 10px;border-radius:999px;background:var(--hl);font-size:13px;font-weight:600;white-space:nowrap}
+.badge.gray{background:var(--ground);color:var(--ink2)}
 .ed-main{flex:1;width:100%;max-width:1320px;margin:0 auto;padding:32px 40px 40px}
 .ed-quiz{display:flex;flex-wrap:wrap;align-items:flex-start;gap:24px}
-.ed-list{flex:1 1 280px;display:flex;flex-direction:column;gap:10px}
+.ed-list{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:10px}
 .ed-list .lbl{padding:0 4px 4px;font-size:14px;font-weight:600;color:var(--muted)}
-.ed-item{display:flex;align-items:center;gap:14px;min-height:64px;padding:10px 16px;border-radius:16px;border:2px solid var(--line);background:var(--surface);text-align:left;cursor:pointer}
+.ed-row{display:flex;gap:6px}
+.ed-item{flex:1;min-width:0;display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 14px;border-radius:16px;border:2px solid var(--line);background:var(--surface);text-align:left;cursor:pointer}
 .ed-item .n{flex:none;width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--ground);font-family:var(--mono);font-size:16px;font-weight:600}
 .ed-item .t{flex:1;min-width:0;font-size:15px;font-weight:500;line-height:1.45;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ed-item .k{flex:none;font-size:13px;font-weight:600;color:var(--muted)}
 .ed-item[aria-pressed="true"]{border-color:var(--ink)}
 .ed-item[aria-pressed="true"] .n{background:var(--ink);color:#fff}
+.ed-item.off{background:var(--soft);border-style:dashed}
+.ed-item.off .t,.ed-item.off .n{color:var(--faint)}
+.ed-eye{flex:none;width:56px;border-radius:16px;border:2px solid var(--line);background:var(--surface);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.ed-eye[aria-pressed="false"]{border-style:dashed;background:var(--soft);color:var(--faint)}
 .ed-form{flex:999 1 640px;min-width:0;display:flex;flex-direction:column;gap:22px;padding:30px 32px 32px;border-radius:24px;background:var(--surface);border:1px solid var(--line)}
 .ed-form.solo{max-width:980px;margin:0 auto;gap:24px;padding:32px 36px 36px}
 .ed-form-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .ed-form-head b{font-size:22px;font-weight:700;letter-spacing:-.015em}
 .ed-form-head .tools{display:flex;gap:8px}
+.ed-type .seg-btn{height:44px;min-width:0;padding:0 18px;font-size:16px;border-radius:10px}
 .field{display:flex;flex-direction:column;gap:8px}
 .field>span{font-size:15px;font-weight:600}
 .field>span em{font-style:normal;font-weight:500;color:var(--muted)}
@@ -229,11 +295,16 @@ input.inp{height:54px;padding:0 16px}
 textarea.inp.code{font-family:var(--code);font-size:17px;line-height:1.75;white-space:pre;overflow-x:auto;background:var(--soft)}
 .ed-opt{display:flex;align-items:center;gap:12px}
 .ed-opt .inp{flex:1;min-width:0}
-.circ{flex:none;width:48px;height:48px;border-radius:50%;border:2px solid var(--line2);background:var(--surface);font-family:var(--mono),var(--sans);font-size:18px;font-weight:600;cursor:pointer}
+.circ{flex:none;width:48px;height:48px;border-radius:50%;border:2px solid var(--line2);background:var(--surface);font-size:19px;font-weight:700;cursor:pointer}
 .circ[aria-pressed="true"]{background:var(--hl);border-color:var(--ink)}
 .circ.lg{width:52px;height:52px;font-size:20px}
 .ed-opt b{flex:none;font-size:14px}
-.ed-foot{flex:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:16px 40px;background:var(--surface);border-top:1px solid var(--line);font-size:15px;color:var(--ink2)}
+.ed-extra{display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:16px;border:1px solid var(--line);background:var(--soft)}
+.ed-extra-head{display:flex;align-items:center;gap:8px}
+.ed-extra-head i{flex:none;width:30px;font-style:normal;font-family:var(--mono);font-size:15px;font-weight:600;color:var(--muted)}
+.ed-extra-head .inp{flex:1;min-width:0}
+.warn{font-size:14px;font-weight:600;color:var(--bad)}
+.ed-foot{flex:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:14px 40px;background:var(--surface);border-top:1px solid var(--line);font-size:15px;color:var(--ink2)}
 .ed-foot.ok{background:var(--hl);font-weight:600}
 .ed-foot.bad{background:#FBEAEA;color:var(--bad);font-weight:600}
 
@@ -270,6 +341,13 @@ const CFG = Object.assign({
 }, window.APP_CONFIG || {});
 document.documentElement.style.setProperty('--hl', CFG.HIGHLIGHT);
 document.title = CFG.TITLE;
+// 파비콘: 첫 화면 로고와 같은 모양, 형광펜 색은 config.js를 따름
+(() => {
+  const el = document.getElementById('favicon');
+  if (!el) return;
+  const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#121417"/><g transform="translate(4 4.5)" fill="none" stroke="' + CFG.HIGHLIGHT + '" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5c2.6-1 5.6-.9 9 1v13c-3.4-1.9-6.4-2-9-1Z"/><path d="M21 5.5c-2.6-1-5.6-.9-9 1v13c3.4-1.9 6.4-2 9-1Z"/></g></svg>';
+  el.href = 'data:image/svg+xml,' + encodeURIComponent(svg);
+})();
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
 
 const PT2PX = 96 / 72;
@@ -414,6 +492,18 @@ function parsePassageName(name) {
   const i = name.indexOf('_');
   return { num: null, numLabel: '', type: i > 0 ? name.slice(0, i).trim() : '', topic: i > 0 ? name.slice(i + 1).trim() : name };
 }
+// 학력평가·모의고사·수능 회차는 번호로 유형을 붙임 (폴더 이름에 유형을 적으면 그쪽이 우선)
+const DEFAULT_TYPES = [
+  [18, 18, '목적'], [19, 19, '심경'], [20, 20, '주장'], [21, 21, '함축적 의미'], [22, 22, '요지'], [23, 23, '주제'], [24, 24, '제목'],
+  [25, 25, '도표'], [26, 26, '내용 일치'], [27, 28, '안내문'], [29, 29, '어법'], [30, 30, '어휘'], [31, 34, '빈칸'],
+  [35, 35, '무관한 문장'], [36, 37, '순서'], [38, 39, '삽입'], [40, 40, '요약'], [41, 45, '장문'],
+];
+const EXAM_SET = /학력평가|모의고사|모의평가|수능|평가원|학평|모평/;
+function defaultType(num, setName) {
+  if (num == null || !EXAM_SET.test(setName || '')) return '';
+  const r = DEFAULT_TYPES.find(([a, b]) => num >= a && num <= b);
+  return r ? r[2] : '';
+}
 function buildIndex(tree) {
   const byId = new Map();
   if (!tree) return { grades: [], byId, rootName: '수업자료' };
@@ -423,7 +513,11 @@ function buildIndex(tree) {
       const set = { id: s.id, name: s.name, grade, files: s.files || {}, passages: [], updated: 0 };
       Object.values(set.files).forEach((f) => { if (f && f.updated > set.updated) set.updated = f.updated; });
       set.passages = (s.passages || [])
-        .map((p) => ({ id: p.id, name: p.name, files: p.files || {}, ...parsePassageName(p.name) }))
+        .map((p) => {
+          const info = parsePassageName(p.name);
+          if (!info.type) info.type = defaultType(info.num, s.name);
+          return { id: p.id, name: p.name, files: p.files || {}, ...info };
+        })
         .sort((a, b) => ((a.num ?? 1e9) - (b.num ?? 1e9)) || byName(a, b));
       set.passages.forEach((p, i) => {
         p.set = set;
@@ -445,7 +539,7 @@ const titleOf = (p) => p.topic || p.type || p.name;
 /* ───────── 주소(화면 이동) ───────── */
 function parseRoute() {
   const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch (e) { return x; } });
-  if (parts[0] === 'p' && parts[1]) return { view: 'passage', id: parts[1], tab: parts[2] || '', panel: parts[3] === 'visual' };
+  if (parts[0] === 'p' && parts[1]) return { view: 'passage', id: parts[1], tab: parts[2] || '', visual: parts[3] === 'visual' };
   if (parts[0] === 'edit' && parts[1]) return { view: 'edit', id: parts[1], which: parts[2] === 'quiz' ? 'quiz' : 'explain' };
   if (parts[0] === 'g' && parts[1]) return { view: 'home', grade: parts[1] };
   return { view: 'home' };
@@ -456,20 +550,25 @@ function nav(path, replace) {
   else location.hash = h;
 }
 
-/* ───────── 해설·형성평가 파일 형식 ───────── */
+/* ───────── 정리(해설.md)·퀴즈(형성평가.md) 파일 형식 ───────── */
 const circIndex = (s) => { const i = CIRC.indexOf(s); return i >= 0 ? i : (/^[1-5]$/.test(s) ? Number(s) - 1 : null); };
-const EX_KEYS = [['summary', /요약/], ['topic', /주제/], ['flow', /흐름/], ['answer', /정답/], ['ev', /근거/], ['why', /풀이|해설/]];
-function emptyExplain() { return { summary: '', topic: '', flow: '', answerNum: null, answerText: '', answerKo: '', ev: '', why: '' }; }
+let KEY = 0;
+const withKey = (o) => ({ ...o, _k: ++KEY });
+
+// 정리: 기본 칸은 제목이 정확히 같을 때만 알아보고, 나머지 '# 제목'은 추가 항목이 됨
+const EX_HEAD = { '한줄요약': 'summary', '주제문': 'topic', '글의흐름': 'flow', '정답': 'answer', '근거문장': 'ev', '근거': 'ev', '풀이': 'why' };
+const headKey = (t) => EX_HEAD[String(t || '').replace(/\s+/g, '')] || null;
+function emptyExplain() { return { summary: '', topic: '', flow: '', answerNum: null, answerText: '', answerKo: '', ev: '', why: '', extras: [] }; }
 function parseExplain(text) {
   const out = emptyExplain();
   const lines = String(text || '').replace(/\r\n?/g, '\n').split('\n');
-  let key = null, buf = [], fence = false;
+  let cur = null, buf = [], fence = false;
   const flush = () => {
-    if (!key) return;
+    if (!cur) return;
     const t = buf.slice();
     while (t.length && !t[0].trim()) t.shift();
     while (t.length && !t[t.length - 1].trim()) t.pop();
-    if (key === 'answer') {
+    if (cur.key === 'answer') {
       const ls = t.map((x) => x.trim()).filter(Boolean);
       if (ls.length) {
         const m = ls[0].match(/^([①②③④⑤]|[1-5])(?![0-9])[\s.)번]*(.*)$/);
@@ -477,17 +576,15 @@ function parseExplain(text) {
         else out.answerText = ls[0];
         out.answerKo = ls.slice(1).join('\n');
       }
-    } else if (key === 'flow') {
-      out.flow = t.join('\n');
-    } else {
-      out[key] = t.join('\n').trim();
-    }
+    } else if (cur.key === 'flow') out.flow = t.join('\n');
+    else if (cur.key) out[cur.key] = t.join('\n').trim();
+    else out.extras.push({ title: cur.title, body: t.join('\n').trim() });
   };
   for (const line of lines) {
     if (/^\s*```/.test(line)) { fence = !fence; continue; }
     const h = !fence && line.match(/^\s*#{1,3}\s+(.+?)\s*$/);
-    if (h) { flush(); const k = EX_KEYS.find(([, re]) => re.test(h[1])); key = k ? k[0] : null; buf = []; continue; }
-    if (key) buf.push(line);
+    if (h) { flush(); cur = { key: headKey(h[1]), title: h[1].trim() }; buf = []; continue; }
+    if (cur) buf.push(line);
   }
   flush();
   return out;
@@ -503,40 +600,114 @@ function serializeExplain(e) {
   L.push('');
   L.push('# 근거 문장', e.ev.trim(), '');
   L.push('# 풀이', e.why.trim(), '');
+  (e.extras || []).forEach((x) => {
+    const title = x.title.trim(), body = x.body.trim();
+    if (!title && !body) return;
+    const t = title || '추가 항목';
+    L.push('# ' + (headKey(t) ? t + ' (추가)' : t), body, '');
+  });
   return L.join('\n');
 }
-function blankQuestion() { return { text: '', quote: '', opts: ['', '', '', '', ''], a: null, ev: '', why: '' }; }
+
+// 퀴즈: '1. [선택] 문제', '2. [TF] [숨김] 문장' 처럼 유형과 숨김을 대괄호로 표시
+const QTYPES = [
+  { id: 'choice', tag: '선택', label: '선택형' },
+  { id: 'tf', tag: 'TF', label: 'T / F' },
+  { id: 'short', tag: '단답', label: '단답형' },
+  { id: 'essay', tag: '서술', label: '서술형' },
+];
+const QTYPE = Object.fromEntries(QTYPES.map((t) => [t.id, t]));
+const TAG_TYPE = { '선택': 'choice', '선택형': 'choice', '객관식': 'choice', 'TF': 'tf', 'T/F': 'tf', 'OX': 'tf', '단답': 'short', '단답형': 'short', '서술': 'essay', '서술형': 'essay' };
+const TF_TEXT = { T: 'True · 맞다', F: 'False · 틀리다' };
+const tfOf = (s) => {
+  const t = String(s || '').trim();
+  if (/^(T|TRUE|O)(?![A-Z])/i.test(t) || /^(참|맞)/.test(t)) return 'T';
+  if (/^(F|FALSE|X)(?![A-Z])/i.test(t) || /^(거짓|틀)/.test(t)) return 'F';
+  return null;
+};
+const stripBullet = (s) => String(s || '').replace(/^\s*(?:[-–·•*]|\d+[.)])\s+/, '').trim();
+function blankQuestion(type) {
+  return { type: type || 'choice', hidden: false, text: '', quote: '', opts: ['', '', '', '', ''], a: null, tf: null, answer: '', hint: '', rubric: '', ev: '', why: '' };
+}
+const Q_LINE = /^Q?\s*(\d{1,2})\s*[.)]\s+(.*)$/i;
 function parseQuiz(text) {
   const qs = [];
-  let cur = null, last = null;
-  for (const raw of String(text || '').replace(/\r\n?/g, '\n').split('\n')) {
-    const line = raw.trim();
-    if (!line) { last = null; continue; }
+  let cur = null, last = null, blank = true;
+  const done = (q) => {
+    const raw = (q._ans || '').trim();
+    // 유형 표시가 없는 예전 파일은 내용을 보고 정함
+    if (!q._typed) q.type = q.opts.some(Boolean) ? 'choice' : tfOf(raw) ? 'tf' : raw ? 'short' : 'choice';
+    if (q.type === 'choice') { const m = raw.match(/[①②③④⑤]|[1-5]/); q.a = m ? circIndex(m[0]) : null; }
+    else if (q.type === 'tf') q.tf = tfOf(raw);
+    else q.answer = q.type === 'short' ? raw.replace(/\s*\n\s*/g, ' ') : raw;
+    delete q._typed; delete q._ans;
+  };
+  for (const rawLine of String(text || '').replace(/\r\n?/g, '\n').split('\n')) {
+    const line = rawLine.trim();
+    if (!line) { last = null; blank = true; continue; }
+    const afterBlank = blank;
+    blank = false;
     let m;
-    if ((m = line.match(/^Q?\s*(\d{1,2})\s*[.)]\s+(.*)$/i))) { cur = blankQuestion(); cur.text = m[2]; qs.push(cur); last = 'text'; continue; }
+    if ((m = line.match(Q_LINE)) && (afterBlank || !cur || (last !== 'ans' && last !== 'rubric'))) {
+      if (cur) done(cur);
+      cur = blankQuestion();
+      cur._ans = '';
+      let rest = m[2], t;
+      while ((t = rest.match(/^\[\s*([^\]\n]{1,8}?)\s*\]\s*/))) {
+        const k = t[1].replace(/\s+/g, '');
+        const ty = TAG_TYPE[k.toUpperCase()] || TAG_TYPE[k];
+        if (k === '숨김' || k === '숨기기') cur.hidden = true;
+        else if (ty) { cur.type = ty; cur._typed = true; }
+        else break;
+        rest = rest.slice(t[0].length);
+      }
+      cur.text = rest;
+      qs.push(cur);
+      last = 'text';
+      continue;
+    }
     if (!cur) continue;
     if ((m = line.match(/^>\s?(.*)$/))) { cur.quote = cur.quote ? cur.quote + '\n' + m[1] : m[1]; last = 'quote'; continue; }
     if ((m = line.match(/^([①②③④⑤])\s*(.*)$/))) { const i = CIRC.indexOf(m[1]); cur.opts[i] = m[2]; last = 'opt' + i; continue; }
-    if ((m = line.match(/^정답\s*[:：]\s*(.*)$/))) { const a = m[1].match(/[①②③④⑤]|[1-5]/); cur.a = a ? circIndex(a[0]) : null; last = null; continue; }
+    if ((m = line.match(/^(?:정답|예시\s*답안|모범\s*답안)\s*[:：]\s*(.*)$/))) { cur._ans = m[1]; last = 'ans'; continue; }
+    if ((m = line.match(/^힌트\s*[:：]\s*(.*)$/))) { cur.hint = m[1]; last = 'hint'; continue; }
+    if ((m = line.match(/^채점(?:\s*(?:포인트|기준))?\s*[:：]\s*(.*)$/))) { cur.rubric = stripBullet(m[1]); last = 'rubric'; continue; }
     if ((m = line.match(/^근거\s*[:：]\s*(.*)$/))) { cur.ev = m[1]; last = 'ev'; continue; }
     if ((m = line.match(/^(?:풀이|해설)\s*[:：]\s*(.*)$/))) { cur.why = m[1]; last = 'why'; continue; }
     if (last === 'text') cur.text += ' ' + line;
     else if (last === 'quote') cur.quote += '\n' + line;
+    else if (last === 'ans') cur._ans += '\n' + line;
+    else if (last === 'hint') cur.hint += ' ' + line;
+    else if (last === 'rubric') { const s = stripBullet(line); if (s) cur.rubric = cur.rubric ? cur.rubric + '\n' + s : s; }
     else if (last === 'ev') cur.ev += '\n' + line;
     else if (last === 'why') cur.why += '\n' + line;
     else if (last && last.startsWith('opt')) { const i = Number(last.slice(3)); cur.opts[i] += ' ' + line; }
   }
+  if (cur) done(cur);
   return qs;
 }
 function serializeQuiz(qs) {
-  const tidy = (s) => s.split('\n').map((x) => x.trim()).filter(Boolean).join('\n');
+  const rows = (s) => String(s || '').split('\n').map((x) => x.trim()).filter(Boolean);
+  const one = (s) => String(s || '').replace(/\s*\n\s*/g, ' ').trim();
   return qs.map((q, i) => {
-    const L = [(i + 1) + '. ' + q.text.replace(/\s*\n\s*/g, ' ').trim()];
-    tidy(q.quote).split('\n').filter(Boolean).forEach((s) => L.push('> ' + s));
-    q.opts.forEach((o, k) => { if (o.trim()) L.push(CIRC[k] + ' ' + o.replace(/\s*\n\s*/g, ' ').trim()); });
-    if (q.a != null) L.push('정답: ' + CIRC[q.a]);
-    if (tidy(q.ev)) L.push('근거: ' + tidy(q.ev));
-    if (tidy(q.why)) L.push('풀이: ' + tidy(q.why));
+    const L = [(i + 1) + '. [' + QTYPE[q.type].tag + ']' + (q.hidden ? ' [숨김]' : '') + ' ' + one(q.text)];
+    rows(q.quote).forEach((s) => L.push('> ' + s));
+    if (q.type === 'choice') {
+      q.opts.forEach((o, k) => { if (one(o)) L.push(CIRC[k] + ' ' + one(o)); });
+      if (q.a != null) L.push('정답: ' + CIRC[q.a]);
+    } else if (q.type === 'tf') {
+      if (q.tf) L.push('정답: ' + q.tf);
+    } else if (q.type === 'short') {
+      if (one(q.answer)) L.push('정답: ' + one(q.answer));
+    } else {
+      const a = rows(q.answer);
+      if (a.length) { L.push('정답: ' + a[0]); a.slice(1).forEach((s) => L.push(s)); }
+    }
+    if (one(q.hint)) L.push('힌트: ' + one(q.hint));
+    const r = rows(q.rubric).map(stripBullet).filter(Boolean);
+    if (q.type === 'essay' && r.length) { L.push('채점:'); r.forEach((s) => L.push('- ' + s)); }
+    if (rows(q.ev).length) L.push('근거: ' + rows(q.ev).join('\n'));
+    if (rows(q.why).length) L.push('풀이: ' + rows(q.why).join('\n'));
     return L.join('\n');
   }).join('\n\n') + '\n';
 }
@@ -562,8 +733,10 @@ const ICONS = {
   screen: <><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8" /><path d="M12 16v4" /><path d="m10 8 4 2-4 2Z" /></>,
   pencil: <><path d="M4 20h4L19 9l-4-4L4 16v4Z" /><path d="m13.5 6.5 4 4" /></>,
   eye: <><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" /><circle cx="12" cy="12" r="3" /></>,
+  eyeOff: <><path d="M3.5 3.5l17 17" /><path d="M10.4 5.7A9 9 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a17 17 0 0 1-3 3.8" /><path d="M6.7 6.9C4.1 8.6 2.5 12 2.5 12S6 18.5 12 18.5c1.8 0 3.3-.6 4.6-1.4" /><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" /></>,
   x: <><path d="M6 6l12 12" /><path d="M18 6 6 18" /></>,
   minus: <path d="M5 12h14" />,
+  dbl: <><path d="m6 6 6 6-6 6" /><path d="m13 6 6 6-6 6" /></>,
   plus: <><path d="M5 12h14" /><path d="M12 5v14" /></>,
   fitW: <><path d="M3 12h18" /><path d="m7 8-4 4 4 4" /><path d="m17 8 4 4-4 4" /></>,
   fitP: <><rect x="6" y="3" width="12" height="18" rx="2" /><path d="M12 7v10" /><path d="m9.5 9.5 2.5-2.5 2.5 2.5" /><path d="m9.5 14.5 2.5 2.5 2.5-2.5" /></>,
@@ -582,7 +755,7 @@ function Icon({ name, size = 20, stroke = 2, ...rest }) {
 }
 
 /* ───────── 공통 조각 ───────── */
-function FullscreenButton() {
+function FullscreenButton({ rail }) {
   const supported = !!document.documentElement.requestFullscreen;
   const [on, setOn] = useState(!!document.fullscreenElement);
   useEffect(() => {
@@ -595,6 +768,7 @@ function FullscreenButton() {
     const p = document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
     if (p && p.catch) p.catch(() => {});
   };
+  if (rail) return <button type="button" className="rb" aria-label={on ? '전체 화면 끝내기' : '전체 화면'} onClick={toggle}><Icon name={on ? 'shrink' : 'full'} size={22} />{on ? '작게' : '전체 화면'}</button>;
   return (
     <button type="button" className="sq-btn" aria-label={on ? '전체 화면 끝내기' : '전체 화면'} onClick={toggle}>
       <Icon name={on ? 'shrink' : 'full'} size={22} />
@@ -650,7 +824,7 @@ function Home({ index, route, sync, onRefresh }) {
     <div className="app">
       <header className="topbar home-top">
         <div className="brand">
-          <div className="brand-mark" aria-hidden="true"><Icon name="book" size={22} stroke={2.2} /></div>
+          <div className="brand-mark" aria-hidden="true"><Icon name="book" size={19} stroke={2.2} /></div>
           <div>
             <div className="brand-title">{CFG.TITLE.replace(/수업자료$/, '')}<span>{/수업자료$/.test(CFG.TITLE) ? '수업자료' : ''}</span></div>
             <div className="brand-sub">{CFG.SUBTITLE}</div>
@@ -729,7 +903,7 @@ function Home({ index, route, sync, onRefresh }) {
                   <div className="card add">
                     <Icon name="folderPlus" size={30} stroke={1.8} />
                     <b>새 지문 추가</b>
-                    <p>회차 PDF는 이 회차 폴더에 한 번만 넣고, 지문 폴더는 ‘번호 유형_주제’ 이름으로 만드세요.</p>
+                    <p>회차 PDF는 이 회차 폴더에 한 번만 넣고, 지문 폴더는 ‘번호_주제’ 이름으로 만드세요. 유형은 번호를 보고 붙습니다.</p>
                   </div>
                 )}
               </div>
@@ -748,10 +922,6 @@ function Home({ index, route, sync, onRefresh }) {
   );
 }
 function PassageCard({ p }) {
-  const f = p.files;
-  const chip = (on, label, offLabel) => on
-    ? <span className="chip"><Icon name="check" size={14} stroke={2.6} />{label}</span>
-    : <span className="chip off">{offLabel}</span>;
   return (
     <a className="card" href={'#/p/' + enc(p.id)}>
       <div className="card-top">
@@ -759,28 +929,23 @@ function PassageCard({ p }) {
         {p.type && <div className="chip-type">{p.type}</div>}
       </div>
       <div className="card-title">{titleOf(p)}</div>
-      <div className="chips">
-        {chip(!!p.pdf, '지문', '지문 없음')}
-        {chip(!!f.explain, '해설', '해설 없음')}
-        {chip(!!f.quiz, '형성평가', '형성평가 없음')}
-        {f.visual && chip(true, '설명 자료')}
-      </div>
     </a>
   );
 }
 
-/* ───────── 지문 화면 ───────── */
+/* ───────── 지문 화면: 위 제목 줄 + 오른쪽 메뉴 ───────── */
 const TAB_DEFS = [
   { id: 'pdf', file: 'pdf', label: '지문', icon: 'file' },
-  { id: 'explain', file: 'explain', label: '해설', icon: 'bulb' },
-  { id: 'quiz', file: 'quiz', label: '형성평가', icon: 'checkCircle' },
+  { id: 'explain', file: 'explain', label: '정리', icon: 'bulb' },
+  { id: 'quiz', file: 'quiz', label: '퀴즈', icon: 'checkCircle' },
 ];
 function Passage({ p, route }) {
   const f = p.files;
   const tabs = TAB_DEFS.filter((t) => (t.id === 'pdf' ? p.pdf : f[t.file]));
   const tab = tabs.some((t) => t.id === route.tab) ? route.tab : (tabs[0] ? tabs[0].id : '');
-  const [panel, setPanel] = useState(!!(route.panel && f.visual));
-  useEffect(() => { setPanel(!!(route.panel && f.visual)); }, [p.id, route.panel]);
+  const visualOpen = !!(route.visual && f.visual);
+  const [railOff, setRailOff] = useState(() => local.get('railOff', false));
+  useEffect(() => { local.set('railOff', railOff); }, [railOff]);
 
   // 이 지문 파일 미리 받아 두기, 다음 지문 PDF도 조금 뒤에
   useEffect(() => {
@@ -792,61 +957,70 @@ function Passage({ p, route }) {
 
   const prev = p.set.passages[p.index - 1];
   const next = p.set.passages[p.index + 1];
-  const goTab = (t) => nav('p/' + enc(p.id) + '/' + t, true);
+  const base = 'p/' + enc(p.id) + '/';
+  const goTab = (t) => nav(base + t, true);
   const goPassage = (x) => nav('p/' + enc(x.id) + '/' + tab, true);
+  const setVisual = (on) => nav(base + (tab || 'pdf') + (on ? '/visual' : ''), true);
   const label = (x) => (x.numLabel ? x.numLabel + '번' : titleOf(x).slice(0, 8));
+  const short = (x) => x.numLabel || titleOf(x).slice(0, 4);
 
   return (
     <div className="app">
-      <header className="topbar">
-        <div className="side">
-          <a className="sq-btn" href={'#/g/' + enc(p.set.grade.id)} aria-label="지문 목록으로"><Icon name="back" size={22} stroke={2.2} /></a>
-          <div className="ptw">
-            <div className="pnum">{p.numLabel || '·'}</div>
-            <div className="pnames">
-              <div className="ptitle">{titleOf(p)}</div>
-              <div className="psub">{p.set.name}{p.type ? ' · ' + p.type : ''}</div>
+      <header className="titlebar">
+        <a className="sq-btn" href={'#/g/' + enc(p.set.grade.id)} aria-label="지문 목록으로"><Icon name="back" size={26} stroke={2.2} /></a>
+        <span className="tnum">{p.numLabel || '·'}</span>
+        <span className="ttitle">{titleOf(p)}</span>
+        <span className="tsub">{p.set.name}{p.type && p.topic ? ' · ' + p.type : ''}</span>
+      </header>
+      <div className="pas-row">
+        <div className="pas-main">
+          {tabs.length === 0 && (
+            <div className="stage" style={{ background: 'var(--ground)', position: 'relative' }}>
+              <Problem title="이 지문 폴더에 아직 파일이 없습니다" />
             </div>
-          </div>
+          )}
+          {tab === 'pdf' && <PdfView key={p.id} info={p.pdf} findNum={p.sharedPdf ? p.num : null} />}
+          {tab === 'explain' && <ExplainView key={p.id} p={p} info={f.explain} onVisual={f.visual ? () => setVisual(true) : null} />}
+          {tab === 'quiz' && <QuizView key={p.id} info={f.quiz} />}
+          {railOff && (
+            <button type="button" className="rail-open" aria-label="메뉴 펼치기" onClick={() => setRailOff(false)}>
+              <Icon name="back" size={22} stroke={2.2} />메뉴
+            </button>
+          )}
         </div>
-        {tabs.length > 0 && (
-          <nav className="seg" aria-label="자료 선택">
+        {!railOff && (
+          <nav className="rail" aria-label="수업 메뉴">
+            <div className="grow" />
             {tabs.map((t) => (
-              <button key={t.id} type="button" className="seg-btn" aria-current={t.id === tab ? 'page' : undefined} onClick={() => goTab(t.id)}>
-                <Icon name={t.icon} size={19} />{t.label}
+              <button key={t.id} type="button" className="rb tab" aria-current={t.id === tab ? 'page' : undefined} onClick={() => goTab(t.id)}>
+                <Icon name={t.icon} size={24} />{t.label}
               </button>
             ))}
+            {f.visual && (
+              <>
+                <hr />
+                <button type="button" className={'rb tab' + (visualOpen ? ' hl' : '')} aria-pressed={visualOpen} onClick={() => setVisual(!visualOpen)}>
+                  <Icon name="screen" size={24} />설명 자료
+                </button>
+              </>
+            )}
+            <hr />
+            <button type="button" className="rb" disabled={!prev} aria-label={prev ? '이전 지문 ' + label(prev) : '이전 지문 없음'} onClick={() => goPassage(prev)}>
+              <Icon name="up" size={20} stroke={2.2} /><span className="nn">{prev ? short(prev) : ''}</span>
+            </button>
+            <button type="button" className="rb" disabled={!next} aria-label={next ? '다음 지문 ' + label(next) : '다음 지문 없음'} onClick={() => goPassage(next)}>
+              <span className="nn">{next ? short(next) : ''}</span><Icon name="down" size={20} stroke={2.2} />
+            </button>
+            <div className="grow lo" />
+            {(tab === 'explain' || tab === 'quiz') && (
+              <button type="button" className="rb" onClick={() => nav('edit/' + enc(p.id) + '/' + tab, true)}><Icon name="pencil" size={21} />수정</button>
+            )}
+            <FullscreenButton rail />
+            <button type="button" className="rb" aria-label="메뉴 접기" onClick={() => setRailOff(true)}><Icon name="dbl" size={21} stroke={2.2} />접기</button>
           </nav>
         )}
-        <div className="side end">
-          <button type="button" className="btn" disabled={!prev} onClick={() => goPassage(prev)} style={{ padding: '0 16px 0 10px' }}>
-            <Icon name="back" stroke={2.2} />{prev ? label(prev) : '이전'}
-          </button>
-          <button type="button" className="btn" disabled={!next} onClick={() => goPassage(next)} style={{ padding: '0 10px 0 16px' }}>
-            {next ? label(next) : '다음'}<Icon name="next" stroke={2.2} />
-          </button>
-          {tab === 'pdf' && f.visual && (
-            <button type="button" className={'btn' + (panel ? ' hl' : '')} aria-pressed={panel} onClick={() => setPanel(!panel)}>
-              <Icon name="screen" />설명 자료
-            </button>
-          )}
-          {(tab === 'explain' || tab === 'quiz') && (
-            <button type="button" className="btn" onClick={() => nav('edit/' + enc(p.id) + '/' + tab, true)} style={{ padding: '0 18px 0 14px' }}>
-              <Icon name="pencil" size={19} />수정
-            </button>
-          )}
-          <FullscreenButton />
-        </div>
-      </header>
-
-      {tabs.length === 0 && (
-        <div className="stage" style={{ background: 'var(--ground)', position: 'relative' }}>
-          <Problem title="이 지문 폴더에 아직 파일이 없습니다" />
-        </div>
-      )}
-      {tab === 'pdf' && <PdfView key={p.id} info={p.pdf} findNum={p.sharedPdf ? p.num : null} visual={f.visual} panel={panel} setPanel={setPanel} />}
-      {tab === 'explain' && <ExplainView key={p.id} p={p} info={f.explain} onVisual={f.visual ? () => nav('p/' + enc(p.id) + '/pdf/visual', true) : null} />}
-      {tab === 'quiz' && <QuizView key={p.id} info={f.quiz} />}
+      </div>
+      {visualOpen && <VisualModal p={p} info={f.visual} onClose={() => setVisual(false)} />}
     </div>
   );
 }
@@ -873,7 +1047,7 @@ async function findPassagePage(pages, num) {
 }
 const ZOOMS = [50, 75, 100, 125, 150, 200, 300, 400];
 const MIN_S = 0.3 * PT2PX, MAX_S = 5 * PT2PX;
-const PAD = { x: 32, top: 32, bottom: 132 };
+const PAD = { x: 24, top: 24, bottom: 40 };
 
 function PageCanvas({ page, w, h, scale }) {
   const ref = useRef(null);
@@ -903,15 +1077,17 @@ function PageCanvas({ page, w, h, scale }) {
   return <div className="pdf-page" style={{ width: cssW, height: cssH }}><canvas ref={ref} /></div>;
 }
 
-function PdfView({ info, findNum, visual, panel, setPanel }) {
+function PdfView({ info, findNum }) {
   const file = useFile(info);
   const [pages, setPages] = useState(null);
   const [err, setErr] = useState(null);
-  const [view, setView] = useState(() => ({ mode: panel ? 'page' : local.get('pdfMode', 'width'), pct: 100 }));
+  const [view, setView] = useState(() => ({ mode: local.get('pdfMode', 'width'), pct: 100 }));
   const [box, setBox] = useState({ w: 0, h: 0 });
-  const [hint, setHint] = useState(true);
+  const [hint, setHint] = useState(() => !local.get('hintSeen', false));
+  const [dock, setDock] = useState(false);
+  const dockT = useRef(0), dockHold = useRef({ hover: false, focus: false });
   const scrollRef = useRef(null), stackRef = useRef(null);
-  const anchorRef = useRef(null), resetRef = useRef(false), savedRef = useRef(null);
+  const anchorRef = useRef(null), resetRef = useRef(false);
   const [jump, setJump] = useState(-1);
   const [curPage, setCurPage] = useState(0);
   const curPageRef = useRef(0); curPageRef.current = curPage;
@@ -988,18 +1164,24 @@ function PdfView({ info, findNum, visual, panel, setPanel }) {
     return () => { sc.removeEventListener('scroll', onScroll); cancelAnimationFrame(raf); };
   }, []);
 
-  // 안내 문구는 잠깐만
-  useEffect(() => { const t = setTimeout(() => setHint(false), 6000); return () => clearTimeout(t); }, []);
-
-  // 설명 자료를 열면 쪽 맞춤, 닫으면 원래대로
-  const firstPanel = useRef(true);
-  const viewRef = useRef(view); viewRef.current = view;
+  // 확대 안내는 처음 한 번만, 잠깐
   useEffect(() => {
-    if (firstPanel.current) { firstPanel.current = false; return; }
-    resetRef.current = true;
-    if (panel) { savedRef.current = viewRef.current; setView({ mode: 'page', pct: 100 }); }
-    else setView(savedRef.current && savedRef.current.mode !== 'page' ? savedRef.current : { mode: local.get('pdfMode', 'width'), pct: 100 });
-  }, [panel]);
+    if (!pages || !hint) return;
+    local.set('hintSeen', true);
+    const t = setTimeout(() => setHint(false), 7000);
+    return () => clearTimeout(t);
+  }, [!!pages]);
+
+  // 아래 확대 막대: 화면을 누르면 나오고 3초 뒤 숨음. 손가락이나 마우스가 막대 위에 있으면 그대로
+  const showDock = () => {
+    setDock(true);
+    clearTimeout(dockT.current);
+    if (!dockHold.current.hover && !dockHold.current.focus) dockT.current = setTimeout(() => setDock(false), 3000);
+  };
+  const dockOn = () => { clearTimeout(dockT.current); setDock(true); };
+  const holdDock = (kind, on) => { dockHold.current[kind] = on; if (on) dockOn(); else showDock(); };
+  useEffect(() => () => clearTimeout(dockT.current), []);
+
 
   const maxW = pages ? Math.max(...pages.map((x) => x.w)) : 595;
   const firstH = pages ? pages[0].h : 842;
@@ -1063,19 +1245,18 @@ function PdfView({ info, findNum, visual, panel, setPanel }) {
     if (!stackRef.current) return;
     if (mode === 'page') resetRef.current = true;
     else { const c = center(); setAnchor(c.x, c.y); }
-    if (!panel) local.set('pdfMode', mode);
+    local.set('pdfMode', mode);
     commit({ mode, pct: 100 });
   };
   const doubleTap = (cx, cy) => {
     const s = scaleRef.current;
-    const base = panel ? fitRef.current.fitP : fitRef.current.fitW;
-    if (s > base * 1.15) { setAnchor(cx, cy); commit({ mode: panel ? 'page' : 'width', pct: 100 }); }
+    if (s > fitRef.current.fitW * 1.15) { setAnchor(cx, cy); commit({ mode: 'width', pct: 100 }); }
     else zoomAt(s * 2, cx, cy);
   };
 
   // 터치: 한 손가락은 스크롤, 두 손가락은 확대·축소, 두 번 탭은 확대/원래대로
   const fns = useRef({});
-  fns.current = { zoomAt, doubleTap, setAnchor, commit };
+  fns.current = { zoomAt, doubleTap, setAnchor, commit, showDock, dockOn };
   useEffect(() => {
     const sc = scrollRef.current;
     if (!sc) return;
@@ -1093,6 +1274,7 @@ function PdfView({ info, findNum, visual, panel, setPanel }) {
         st.style.transformOrigin = pinch.ox + 'px ' + pinch.oy + 'px';
         tap = null;
         setHint(false);
+        fns.current.dockOn();
       } else if (e.touches.length === 1) {
         tap = { x: e.touches[0].clientX, y: e.touches[0].clientY, t: Date.now() };
       } else tap = null;
@@ -1116,6 +1298,7 @@ function PdfView({ info, findNum, visual, panel, setPanel }) {
           pinch = null;
           anchorRef.current = { px: p.px, py: p.py, cx: p.m1.x, cy: p.m1.y };
           fns.current.commit({ mode: 'zoom', pct: Math.round(((p.s0 * p.k) / PT2PX) * 100) });
+          fns.current.showDock();
           tap = null;
           lastTap = null;
         }
@@ -1135,6 +1318,7 @@ function PdfView({ info, findNum, visual, panel, setPanel }) {
       if (!e.ctrlKey) return;
       e.preventDefault();
       fns.current.zoomAt(scaleRef.current * Math.exp(-e.deltaY * 0.0025), e.clientX, e.clientY);
+      fns.current.showDock();
     };
     sc.addEventListener('touchstart', start, { passive: false });
     sc.addEventListener('touchmove', move, { passive: false });
@@ -1153,8 +1337,8 @@ function PdfView({ info, findNum, visual, panel, setPanel }) {
   const failed = err || file.status === 'error';
   return (
     <div className="stage">
-      <div className={'pdf-area' + (panel ? ' with-panel' : '')}>
-        <div className="pdf-scroll" ref={scrollRef} onDoubleClick={(e) => doubleTap(e.clientX, e.clientY)}>
+      <div className="pdf-area">
+        <div className="pdf-scroll" ref={scrollRef} onClick={showDock} onDoubleClick={(e) => doubleTap(e.clientX, e.clientY)}>
           <div className="pdf-sheet">
             {pages && box.w > 0 && (
               <div className="pdf-stack" ref={stackRef}>
@@ -1165,72 +1349,117 @@ function PdfView({ info, findNum, visual, panel, setPanel }) {
         </div>
         {!pages && !failed && <Loading text="지문을 불러오는 중" />}
         {failed && <Problem title="지문 PDF를 열지 못했습니다" error={file.error || err} onRetry={() => location.reload()} />}
-        {pages && !panel && (
+        {pages && (
           <div className={'hint' + (hint ? '' : ' gone')} aria-hidden={!hint}>
-            <Icon name="pinch" size={18} />두 손가락으로 확대·축소 · 두 번 탭하면 확대
+            <Icon name="pinch" size={18} />두 손가락으로 확대·축소 · 두 번 탭하면 확대 · 한 번 탭하면 확대 버튼
           </div>
         )}
         {pages && (
-          <div className="dock">
-            <button type="button" aria-label="축소" onClick={() => stepZoom(-1)}><Icon name="minus" size={24} stroke={2.2} /></button>
+          <div className={'dock' + (dock ? '' : ' hide')} onPointerEnter={() => holdDock('hover', true)} onPointerLeave={() => holdDock('hover', false)} onFocus={(e) => { if (e.target.matches(':focus-visible')) holdDock('focus', true); }} onBlur={() => { if (dockHold.current.focus) holdDock('focus', false); }}>
+            <button type="button" aria-label="확대" onClick={() => stepZoom(1)}><Icon name="plus" size={22} stroke={2.2} /></button>
             <div className="pct" aria-live="polite">{pct}%</div>
-            <button type="button" aria-label="확대" onClick={() => stepZoom(1)}><Icon name="plus" size={24} stroke={2.2} /></button>
+            <button type="button" aria-label="축소" onClick={() => stepZoom(-1)}><Icon name="minus" size={22} stroke={2.2} /></button>
             <div className="sep" aria-hidden="true" />
-            <button type="button" className={panel ? '' : 'wide'} aria-label="폭 맞춤" aria-pressed={view.mode === 'width'} onClick={() => fitMode('width')}>
-              <Icon name="fitW" />{!panel && <span>폭 맞춤</span>}
-            </button>
-            <button type="button" className={panel ? '' : 'wide'} aria-label="쪽 맞춤" aria-pressed={view.mode === 'page'} onClick={() => fitMode('page')}>
-              <Icon name="fitP" />{!panel && <span>쪽 맞춤</span>}
-            </button>
-            {!panel && <><div className="sep" aria-hidden="true" /><div className="pages">{pages.length > 1 ? (pages[curPage] || pages[0]).n + ' / ' + pages[pages.length - 1].n : pages[0].n}쪽</div></>}
+            <button type="button" aria-label="폭 맞춤" title="폭 맞춤" aria-pressed={view.mode === 'width'} onClick={() => fitMode('width')}><Icon name="fitW" size={22} /></button>
+            <button type="button" aria-label="쪽 맞춤" title="쪽 맞춤" aria-pressed={view.mode === 'page'} onClick={() => fitMode('page')}><Icon name="fitP" size={22} /></button>
+            {pages.length > 1 && <><div className="sep" aria-hidden="true" /><div className="pages">{(pages[curPage] || pages[0]).n} / {pages[pages.length - 1].n}쪽</div></>}
           </div>
         )}
       </div>
-      {panel && visual && <VisualPanel info={visual} onClose={() => setPanel(false)} />}
     </div>
   );
 }
 
-function VisualPanel({ info, onClose }) {
+// 설명 자료: 화면 맨 위 창. 닫기 버튼이나 Esc로만 닫힘 (바깥을 눌러도 안 닫힘)
+function VisualModal({ p, info, onClose }) {
   const f = useFile(info);
+  const frame = useRef(null);
+  const closeRef = useRef(onClose); closeRef.current = onClose;
+  const title = useMemo(() => {
+    const m = f.data && f.data.text && f.data.text.match(/<title>([^<]*)<\/title>/i);
+    const t = m ? m[1].trim() : '';
+    return t && !/^설명\s*자료/.test(t) ? t : titleOf(p);
+  }, [f.data]);
+  useEffect(() => {
+    const key = (e) => { if (e.key === 'Escape') closeRef.current(); };
+    // 설명 자료 안에서 Esc를 누르면 창이 알려 줌
+    const msg = (e) => { if (frame.current && e.source === frame.current.contentWindow && e.data && e.data.cmv === 'close') closeRef.current(); };
+    document.addEventListener('keydown', key);
+    window.addEventListener('message', msg);
+    return () => { document.removeEventListener('keydown', key); window.removeEventListener('message', msg); };
+  }, []);
   return (
-    <section className="visual-panel" aria-label="설명 자료">
-      {f.status === 'ok' && <iframe title="설명 자료" sandbox="allow-scripts" srcDoc={f.data.text} onLoad={(e) => { try { e.currentTarget.focus(); } catch (x) {} }} />}
-      {f.status === 'loading' && <Loading text="설명 자료를 불러오는 중" />}
-      {f.status === 'error' && <Problem title="설명 자료를 열지 못했습니다" error={f.error} />}
-      <button type="button" className="sq-btn sm panel-close" aria-label="설명 자료 닫기" onClick={onClose}><Icon name="x" stroke={2.2} /></button>
-    </section>
+    <div className="vm-bg" role="dialog" aria-modal="true" aria-label="설명 자료">
+      <div className="vm">
+        <div className="vm-head">
+          <div className="t"><Icon name="screen" size={20} /><b>설명 자료</b><span>{p.numLabel ? p.numLabel + ' · ' : ''}{title}</span></div>
+          <button type="button" className="btn" onClick={onClose}><Icon name="x" size={20} stroke={2.2} />닫기</button>
+        </div>
+        <div className="vm-body">
+          {f.status === 'ok' && <iframe ref={frame} title="설명 자료" sandbox="allow-scripts" srcDoc={f.data.text} onLoad={(e) => { try { e.currentTarget.focus(); } catch (x) {} }} />}
+          {f.status === 'loading' && <Loading text="설명 자료를 불러오는 중" />}
+          {f.status === 'error' && <Problem title="설명 자료를 열지 못했습니다" error={f.error} />}
+        </div>
+      </div>
+    </div>
   );
 }
 
-/* ───────── 해설 ───────── */
+/* ───────── 정리 ───────── */
 const FS = [17, 18.5, 20, 22, 24, 26, 28];
+const shortOf = (t) => { const w = String(t || '').trim().split(/\s+/)[0] || ''; return w.length > 5 ? w.slice(0, 4) + '…' : w; };
 function ExplainView({ p, info, onVisual }) {
   const f = useFile(info);
   const ex = useMemo(() => (f.status === 'ok' ? parseExplain(f.data.text) : null), [f.data]);
   const [fsIdx, setFsIdx] = useState(() => clamp(local.get('exFs', 2), 0, FS.length - 1));
   const [shown, setShown] = useState(true);
+  const [active, setActive] = useState('');
+  const scRef = useRef(null);
   useEffect(() => { local.set('exFs', fsIdx); }, [fsIdx]);
 
-  if (f.status === 'loading') return <div className="stage" style={{ position: 'relative', background: 'var(--ground)' }}><Loading text="해설을 불러오는 중" /></div>;
-  if (f.status === 'error' || !ex) return <div className="stage" style={{ position: 'relative', background: 'var(--ground)' }}><Problem title="해설을 열지 못했습니다" error={f.error} /></div>;
-
-  const hasAnswer = ex.answerNum != null || ex.answerText || ex.ev || ex.why;
-  const secs = [
-    ex.summary && { id: 'sum', label: '한 줄 요약' },
-    ex.topic && { id: 'topic', label: '주제문' },
-    ex.flow.trim() && { id: 'flow', label: '글의 흐름' },
-    hasAnswer && { id: 'answer', label: '정답과 근거' },
+  const hasAnswer = !!ex && (ex.answerNum != null || ex.answerText || ex.ev || ex.why);
+  const secs = !ex ? [] : [
+    ex.summary && { id: 'sum', label: '한 줄 요약', short: '요약' },
+    ex.topic && { id: 'topic', label: '주제문', short: '주제문' },
+    ex.flow.trim() && { id: 'flow', label: '글의 흐름', short: '흐름' },
+    hasAnswer && { id: 'answer', label: '정답과 근거', short: '정답' },
+    ...ex.extras.map((x, i) => (x.title || x.body) && { id: 'x' + i, label: x.title || '추가 항목', short: shortOf(x.title || '추가') }),
   ].filter(Boolean);
+  const secKey = secs.map((s) => s.id).join(',');
+
+  // 오른쪽 막대에 지금 보는 항목 표시
+  useEffect(() => {
+    const sc = scRef.current;
+    if (!sc || !secs.length) return;
+    let raf = 0;
+    const on = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const line = sc.getBoundingClientRect().top + 140;
+        let cur = secs[0].id;
+        secs.forEach((s) => { const el = document.getElementById('ex-' + s.id); if (el && el.getBoundingClientRect().top <= line) cur = s.id; });
+        if (sc.scrollTop > 0 && sc.scrollTop + sc.clientHeight >= sc.scrollHeight - 4) cur = secs[secs.length - 1].id;
+        setActive(cur);
+      });
+    };
+    on();
+    sc.addEventListener('scroll', on, { passive: true });
+    return () => { sc.removeEventListener('scroll', on); cancelAnimationFrame(raf); };
+  }, [secKey]);
+
+  if (f.status === 'loading') return <div className="stage" style={{ position: 'relative', background: 'var(--ground)' }}><Loading text="정리를 불러오는 중" /></div>;
+  if (f.status === 'error' || !ex) return <div className="stage" style={{ position: 'relative', background: 'var(--ground)' }}><Problem title="정리를 열지 못했습니다" error={f.error} /></div>;
+
   const no = (id) => String(secs.findIndex((s) => s.id === id) + 1).padStart(2, '0');
   const jump = (id) => { const el = document.getElementById('ex-' + id); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
 
   return (
-    <div className="scroll">
+    <div className="scroll" ref={scRef}>
       <main className="ex-main">
         <article className="ex-art" style={{ fontSize: FS[fsIdx] }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '.8em' }}>
-            <div className="eyebrow2">해설 · {p.numLabel ? p.numLabel + '번 ' : ''}{p.type}</div>
+            <div className="eyebrow2">정리 · {p.numLabel ? p.numLabel + '번' : ''}{p.type ? ' ' + p.type : ''}</div>
             <h1>{titleOf(p)}</h1>
           </div>
 
@@ -1267,8 +1496,8 @@ function ExplainView({ p, info, onVisual }) {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.3em' }}>
                   {(ex.answerNum != null || ex.answerText) && (
                     <div className="ex-answer">
-                      {ex.answerNum != null && <div className="n">{CIRC[ex.answerNum]}</div>}
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '.25em' }}>
+                      {ex.answerNum != null && <div className="n">{ex.answerNum + 1}</div>}
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '.25em', paddingTop: '.25em' }}>
                         {ex.answerText && <div className="en">{ex.answerText}</div>}
                         {ex.answerKo && <div className="ko">{ex.answerKo}</div>}
                       </div>
@@ -1282,54 +1511,65 @@ function ExplainView({ p, info, onVisual }) {
               )}
             </section>
           )}
-          {secs.length === 0 && <p style={{ color: 'var(--muted)' }}>해설 파일에 내용이 없습니다. 위쪽 [수정]에서 채울 수 있습니다.</p>}
+          {ex.extras.map((x, i) => (x.title || x.body) ? (
+            <section className="ex-sec" id={'ex-x' + i} key={i}>
+              <h2><span>{no('x' + i)}</span>{x.title || '추가 항목'}</h2>
+              {x.body && <p className="ex-topic">{x.body}</p>}
+            </section>
+          ) : null)}
+          {secs.length === 0 && <p style={{ color: 'var(--muted)' }}>정리 파일에 내용이 없습니다. 위쪽 [수정]에서 채울 수 있습니다.</p>}
         </article>
 
-        <aside className="ex-side">
+        <aside className="ex-rail" aria-label="정리 목차와 글자 크기">
           {secs.length > 1 && (
-            <nav className="box toc" aria-label="해설 목차">
-              <div className="box-label">목차</div>
-              {secs.map((s) => <button key={s.id} type="button" onClick={() => jump(s.id)}><span>{no(s.id)}</span>{s.label}</button>)}
-            </nav>
+            <>
+              {secs.map((s) => (
+                <button key={s.id} type="button" className="sec" title={s.label} aria-label={no(s.id) + ' ' + s.label} aria-current={active === s.id ? 'true' : undefined} onClick={() => jump(s.id)}>
+                  <b>{no(s.id)}</b><span>{s.short}</span>
+                </button>
+              ))}
+              <hr />
+            </>
           )}
-          <div className="box">
-            <div className="box-label">글자 크기</div>
-            <div className="fs">
-              <button type="button" aria-label="글자 작게" style={{ fontSize: 16 }} onClick={() => setFsIdx(Math.max(0, fsIdx - 1))}>가−</button>
-              <div className="v" aria-live="polite">{Math.round((FS[fsIdx] / 20) * 100)}%</div>
-              <button type="button" aria-label="글자 크게" style={{ fontSize: 22 }} onClick={() => setFsIdx(Math.min(FS.length - 1, fsIdx + 1))}>가+</button>
-            </div>
-          </div>
+          <button type="button" className="fsb" aria-label="글자 크게" style={{ fontSize: 19 }} disabled={fsIdx === FS.length - 1} onClick={() => setFsIdx(Math.min(FS.length - 1, fsIdx + 1))}>가+</button>
+          <div className="fsv" aria-live="polite">{Math.round((FS[fsIdx] / 20) * 100)}%</div>
+          <button type="button" className="fsb" aria-label="글자 작게" style={{ fontSize: 15 }} disabled={fsIdx === 0} onClick={() => setFsIdx(Math.max(0, fsIdx - 1))}>가−</button>
         </aside>
       </main>
     </div>
   );
 }
 
-/* ───────── 형성평가 ───────── */
+/* ───────── 퀴즈 ───────── */
 function QuizView({ info }) {
   const f = useFile(info);
-  const qs = useMemo(() => (f.status === 'ok' ? parseQuiz(f.data.text).filter((q) => q.text || q.opts.some(Boolean)) : []), [f.data]);
+  const all = useMemo(() => (f.status === 'ok' ? parseQuiz(f.data.text).filter((q) => q.text || q.opts.some(Boolean) || q.answer) : []), [f.data]);
+  const qs = useMemo(() => all.filter((q) => !q.hidden), [all]);
   const [idx, setIdx] = useState(0);
-  const [picked, setPicked] = useState(-1);
+  const [picked, setPicked] = useState(null);
   const [revealed, setRevealed] = useState(false);
+  const [hintOn, setHintOn] = useState(false);
 
-  if (f.status === 'loading') return <div className="stage" style={{ position: 'relative', background: 'var(--ground)' }}><Loading text="형성평가를 불러오는 중" /></div>;
-  if (f.status === 'error') return <div className="stage" style={{ position: 'relative', background: 'var(--ground)' }}><Problem title="형성평가를 열지 못했습니다" error={f.error} /></div>;
-  if (!qs.length) return <div className="stage" style={{ position: 'relative', background: 'var(--ground)' }}><Problem title="형성평가 문항을 읽지 못했습니다" /></div>;
+  const center = (body) => <div className="stage" style={{ position: 'relative', background: 'var(--ground)' }}>{body}</div>;
+  if (f.status === 'loading') return center(<Loading text="퀴즈를 불러오는 중" />);
+  if (f.status === 'error') return center(<Problem title="퀴즈를 열지 못했습니다" error={f.error} />);
+  if (!all.length) return center(<Problem title="퀴즈 문항을 읽지 못했습니다" />);
+  if (!qs.length) return center(<div className="center-msg"><Icon name="eyeOff" size={30} /><b>수업에 보일 문항이 없습니다</b><small>위쪽 [수정]에서 보일 문항의 눈 아이콘을 켜 주세요.</small></div>);
 
   const i = Math.min(idx, qs.length - 1);
   const q = qs[i];
   const last = i === qs.length - 1;
-  const go = (n) => { setIdx(n); setPicked(-1); setRevealed(false); };
+  const go = (n) => { setIdx(n); setPicked(null); setRevealed(false); setHintOn(false); };
+  const written = q.type === 'short' || q.type === 'essay';
+  const rubric = String(q.rubric || '').split('\n').map((s) => s.trim()).filter(Boolean);
 
   return (
     <div className="scroll" style={{ display: 'flex', flexDirection: 'column' }}>
       <main className="qz-main">
         <section className="qz-left" aria-label="문제">
           <div className="qz-prog">
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 12 }}>
-              <span className="lbl">QUESTION</span>
+            <div className="l">
+              <span className="qz-type">{QTYPE[q.type].label}</span>
               <span className="num">{i + 1} <span>/ {qs.length}</span></span>
             </div>
             <div className="segs" aria-hidden="true">
@@ -1338,39 +1578,80 @@ function QuizView({ info }) {
           </div>
           <h1 className="qz-q">{q.text}</h1>
           {q.quote && <div className="qz-quote">{q.quote}</div>}
-          <div className="opts">
-            {q.opts.map((t, k) => {
-              if (!t) return null;
-              const isPicked = picked === k;
-              const right = revealed && k === q.a;
-              const wrong = revealed && isPicked && k !== q.a;
-              const cls = 'opt' + (right ? ' right' : wrong ? ' wrong' : revealed ? ' dim' : isPicked ? ' picked' : '');
-              return (
-                <button key={k} type="button" className={cls} aria-pressed={isPicked} onClick={() => { if (!revealed) setPicked(isPicked ? -1 : k); }}>
-                  <span className="c">{CIRC[k]}</span>
-                  <span className="t">{t}</span>
-                  {right && <span className="tag ok"><Icon name="check" size={16} stroke={2.8} />정답</span>}
-                  {wrong && <span className="tag no"><Icon name="x" size={15} stroke={2.6} />선택</span>}
-                </button>
-              );
-            })}
-          </div>
+          {hintOn && q.hint && <div className="qz-hint"><small>힌트</small><span>{q.hint}</span></div>}
+
+          {q.type === 'choice' && (
+            <div className="opts">
+              {q.opts.map((t, k) => {
+                if (!t) return null;
+                const isPicked = picked === k;
+                const right = revealed && k === q.a;
+                const wrong = revealed && isPicked && k !== q.a;
+                const cls = 'opt' + (right ? ' right' : wrong ? ' wrong' : revealed ? ' dim' : isPicked ? ' picked' : '');
+                return (
+                  <button key={k} type="button" className={cls} aria-pressed={isPicked} onClick={() => { if (!revealed) setPicked(isPicked ? null : k); }}>
+                    <span className="c">{k + 1}</span>
+                    <span className="t">{t}</span>
+                    {right && <span className="tag ok"><Icon name="check" size={16} stroke={2.8} />정답</span>}
+                    {wrong && <span className="tag no"><Icon name="x" size={15} stroke={2.6} />선택</span>}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
+          {q.type === 'tf' && (
+            <div className="tf" role="group" aria-label="맞으면 T, 틀리면 F">
+              {['T', 'F'].map((v) => {
+                const isPicked = picked === v;
+                const right = revealed && q.tf === v;
+                const wrong = revealed && isPicked && q.tf !== v;
+                const cls = right ? 'right' : wrong ? 'wrong' : revealed ? 'dim' : isPicked ? 'picked' : '';
+                return (
+                  <button key={v} type="button" className={cls} aria-pressed={isPicked} onClick={() => { if (!revealed) setPicked(isPicked ? null : v); }}>
+                    <b>{v}</b><small>{TF_TEXT[v]}</small>
+                    {right && <span className="tag ok"><Icon name="check" size={16} stroke={2.8} />정답</span>}
+                    {wrong && <span className="tag no"><Icon name="x" size={15} stroke={2.6} />선택</span>}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
+          {written && (revealed && q.answer ? (
+            <div className={'qz-answer' + (q.type === 'essay' || q.answer.length > 40 ? ' long' : '')}>
+              <small>{q.type === 'essay' ? '예시 답안' : '정답'}</small>
+              <b>{q.answer}</b>
+            </div>
+          ) : (
+            <div className={'qz-blank' + (q.type === 'essay' ? ' tall' : '')} aria-hidden="true">{q.type === 'essay' ? '예시 답안' : '정답'}</div>
+          ))}
         </section>
 
         <aside className="qz-side">
           {!revealed ? (
             <div className="grow center">
-              <p>보기를 누르면 선택 표시만 됩니다.<br />학생들의 답을 들은 뒤 정답을 공개하세요.</p>
-              <button type="button" className="reveal" onClick={() => setRevealed(true)}><Icon name="eye" size={24} />정답 보기</button>
+              {q.hint && (
+                <button type="button" className="btn big" aria-pressed={hintOn} onClick={() => setHintOn(!hintOn)} style={{ height: 64, borderColor: 'var(--line2)' }}>
+                  <Icon name="bulb" size={22} />{hintOn ? '힌트 숨기기' : '힌트 보기'}
+                </button>
+              )}
+              <button type="button" className="reveal" onClick={() => setRevealed(true)}><Icon name="eye" size={24} />{q.type === 'essay' ? '예시 답안 보기' : '정답 보기'}</button>
             </div>
           ) : (
             <div className="grow">
-              {q.a != null ? (
-                <div className="ans">
-                  <div className="n">{CIRC[q.a]}</div>
-                  <div><small>정답</small><b>{q.opts[q.a]}</b></div>
+              {q.type === 'choice' && (q.a != null ? (
+                <div className="ans"><div className="n">{q.a + 1}</div><div><small>정답</small><b>{q.opts[q.a]}</b></div></div>
+              ) : <p>이 문항에는 정답이 지정되지 않았습니다.</p>)}
+              {q.type === 'tf' && (q.tf ? (
+                <div className="ans"><div className="n">{q.tf}</div><div><small>정답</small><b>{TF_TEXT[q.tf]}</b></div></div>
+              ) : <p>이 문항에는 정답이 지정되지 않았습니다.</p>)}
+              {written && !q.answer && <p>이 문항에는 정답이 적혀 있지 않습니다.</p>}
+              {q.type === 'essay' && rubric.length > 0 && (
+                <div className="ev"><small>채점 포인트</small>
+                  <ul className="rubric">{rubric.map((r, k) => <li key={k}><Icon name="check" size={18} stroke={2.6} />{r}</li>)}</ul>
                 </div>
-              ) : <p>이 문항에는 정답이 지정되지 않았습니다.</p>}
+              )}
               {q.ev && <div className="ev"><small>지문 근거</small><div lang="en">{q.ev}</div></div>}
               {q.why && <div className="why">{q.why}</div>}
             </div>
@@ -1405,7 +1686,7 @@ function AuthModal({ onOk, onCancel }) {
     <div className="modal-bg">
       <form className="modal" onSubmit={submit}>
         <h2><Icon name="lock" size={24} />선생님 모드</h2>
-        <p>해설과 형성평가를 고치려면 비밀번호를 입력하세요.</p>
+        <p>정리와 퀴즈를 고치려면 비밀번호를 입력하세요.</p>
         <label className="field">
           <span>비밀번호</span>
           <input className="inp" type="password" autoFocus value={v} onChange={(e) => setV(e.target.value)} autoComplete="current-password" />
@@ -1449,18 +1730,23 @@ function Editor({ p, which, onSaved }) {
 
   useEffect(() => {
     if (ex) return;
-    if (!p.files.explain) { const e = emptyExplain(); orig.current.ex = serializeExplain(e); setEx(e); }
-    else if (exFile.status === 'ok') { const e = parseExplain(exFile.data.text); orig.current.ex = serializeExplain(e); setEx(e); }
+    let e = null;
+    if (!p.files.explain) e = emptyExplain();
+    else if (exFile.status === 'ok') e = parseExplain(exFile.data.text);
+    if (!e) return;
+    e.extras = e.extras.map(withKey);
+    orig.current.ex = serializeExplain(e);
+    setEx(e);
   }, [exFile.status]);
   useEffect(() => {
     if (qs) return;
-    if (!p.files.quiz) { const q = [blankQuestion()]; orig.current.qs = serializeQuiz(q); setQs(q); }
-    else if (qzFile.status === 'ok') {
-      let q = parseQuiz(qzFile.data.text);
-      if (!q.length) q = [blankQuestion()];
-      orig.current.qs = serializeQuiz(q);
-      setQs(q);
-    }
+    let q = null;
+    if (!p.files.quiz) q = [blankQuestion()];
+    else if (qzFile.status === 'ok') { q = parseQuiz(qzFile.data.text); if (!q.length) q = [blankQuestion()]; }
+    if (!q) return;
+    q = q.map(withKey);
+    orig.current.qs = serializeQuiz(q);
+    setQs(q);
   }, [qzFile.status]);
 
   const dirtyEx = !!ex && serializeExplain(ex) !== orig.current.ex;
@@ -1493,33 +1779,36 @@ function Editor({ p, which, onSaved }) {
   };
 
   const loading = !ex || !qs;
-  const q = qs ? qs[Math.min(sel, qs.length - 1)] : null;
   const si = qs ? Math.min(sel, qs.length - 1) : 0;
+  const q = qs ? qs[si] : null;
   const setQ = (patch) => setQs(qs.map((x, j) => (j === si ? { ...x, ...patch } : x)));
   const swap = (a, b) => { if (b < 0 || b >= qs.length) return; const n = qs.slice(); [n[a], n[b]] = [n[b], n[a]]; setQs(n); setSel(b); };
+  const toggleHide = (k) => setQs(qs.map((x, j) => (j === k ? { ...x, hidden: !x.hidden } : x)));
+  const shownCount = qs ? qs.filter((x) => !x.hidden).length : 0;
   const exField = (k) => ({ value: ex[k], onChange: (e) => setEx({ ...ex, [k]: e.target.value }) });
+  const setX = (k, patch) => setEx({ ...ex, extras: ex.extras.map((x, j) => (j === k ? { ...x, ...patch } : x)) });
+  const moveX = (a, b) => { if (b < 0 || b >= ex.extras.length) return; const n = ex.extras.slice(); [n[a], n[b]] = [n[b], n[a]]; setEx({ ...ex, extras: n }); };
+  const qField = (k) => ({ value: q[k], onChange: (e) => setQ({ [k]: e.target.value }) });
 
   return (
     <div className="app">
       <header className="topbar">
         <div className="side">
           <button type="button" className="sq-btn" aria-label="수정을 마치고 돌아가기" onClick={tryLeave}><Icon name="back" size={22} stroke={2.2} /></button>
-          <div className="pnames">
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <div style={{ fontSize: 20, fontWeight: 700, letterSpacing: '-.015em', whiteSpace: 'nowrap' }}>{p.numLabel ? p.numLabel + '번 ' : ''}자료 수정</div>
-              <span className="badge"><Icon name="unlock" size={14} stroke={2.2} />선생님 모드</span>
-            </div>
-            <div className="psub">{p.set.name}{p.type ? ' · ' + p.type : ''}</div>
+          <div className="ptw">
+            <span className="ptitle">{p.numLabel ? p.numLabel + '번 ' : ''}자료 수정</span>
+            <span className="badge"><Icon name="unlock" size={14} stroke={2.2} />선생님 모드</span>
+            <span className="psub">{p.set.name}{p.type ? ' · ' + p.type : ''}</span>
           </div>
         </div>
         <div className="seg" role="group" aria-label="수정할 자료">
-          <button type="button" className="seg-btn" aria-pressed={tab === 'explain'} onClick={() => setTab('explain')}>해설{dirtyEx ? ' •' : ''}</button>
-          <button type="button" className="seg-btn" aria-pressed={tab === 'quiz'} onClick={() => setTab('quiz')}>형성평가{dirtyQz ? ' •' : ''}</button>
+          <button type="button" className="seg-btn" aria-pressed={tab === 'explain'} onClick={() => setTab('explain')}><Icon name="bulb" size={18} />정리{dirtyEx ? ' •' : ''}</button>
+          <button type="button" className="seg-btn" aria-pressed={tab === 'quiz'} onClick={() => setTab('quiz')}><Icon name="checkCircle" size={18} />퀴즈{dirtyQz ? ' •' : ''}</button>
         </div>
         <div className="side end">
-          <button type="button" className="btn" onClick={tryLeave} style={{ padding: '0 22px', fontSize: 17 }}>취소</button>
-          <button type="button" className="btn primary" onClick={save} disabled={saving || loading || !pw} style={{ padding: '0 26px 0 20px', fontSize: 17 }}>
-            <Icon name={saving ? 'refresh' : 'check'} size={19} stroke={2.4} className={saving ? 'spin' : ''} />{saving ? '저장 중…' : '저장'}
+          <button type="button" className="btn" onClick={tryLeave} style={{ padding: '0 20px' }}>취소</button>
+          <button type="button" className="btn primary" onClick={save} disabled={saving || loading || !pw} style={{ padding: '0 22px 0 18px' }}>
+            <Icon name={saving ? 'refresh' : 'check'} size={18} stroke={2.4} className={saving ? 'spin' : ''} />{saving ? '저장 중…' : '저장'}
           </button>
         </div>
       </header>
@@ -1529,20 +1818,40 @@ function Editor({ p, which, onSaved }) {
 
         {!loading && tab === 'explain' && (
           <main className="ed-main">
-            <section className="ed-form solo" aria-label="해설 편집">
+            <section className="ed-form solo" aria-label="정리 편집">
               <label className="field"><span><i>01</i> 한 줄 요약 <em>· 한국어</em></span><textarea className="inp" rows={2} {...exField('summary')} /></label>
               <label className="field"><span><i>02</i> 주제문 <em>· 영어</em></span><textarea className="inp" rows={2} lang="en" {...exField('topic')} /></label>
               <label className="field"><span><i>03</i> 글의 흐름 <em>· 칸이 맞도록 고정폭 글꼴로 표시됩니다</em></span><textarea className="inp code" rows={13} wrap="off" spellCheck={false} {...exField('flow')} /></label>
               <div className="field">
                 <span><i>04</i> 정답</span>
                 <div role="group" aria-label="정답 번호" style={{ display: 'flex', gap: 10 }}>
-                  {CIRC.map((c, k) => <button key={k} type="button" className="circ lg" aria-pressed={ex.answerNum === k} onClick={() => setEx({ ...ex, answerNum: ex.answerNum === k ? null : k })}>{c}</button>)}
+                  {CIRC.map((c, k) => <button key={k} type="button" className="circ lg" aria-label={(k + 1) + '번'} aria-pressed={ex.answerNum === k} onClick={() => setEx({ ...ex, answerNum: ex.answerNum === k ? null : k })}>{k + 1}</button>)}
                 </div>
               </div>
               <label className="field"><span>정답 보기 <em>· 보기 내용 그대로</em></span><input className="inp" type="text" lang="en" {...exField('answerText')} /></label>
               <label className="field"><span>정답 보기 해석</span><input className="inp" type="text" {...exField('answerKo')} /></label>
               <label className="field"><span>근거 문장</span><textarea className="inp" rows={3} lang="en" style={{ fontSize: 17 }} {...exField('ev')} /></label>
               <label className="field"><span>풀이</span><textarea className="inp" rows={3} style={{ fontSize: 17 }} {...exField('why')} /></label>
+
+              <div className="field">
+                <span>추가 항목 <em>· 정리 화면에 05번부터 이어서 나옵니다</em></span>
+                {ex.extras.map((x, k) => (
+                  <div className="ed-extra" key={x._k}>
+                    <div className="ed-extra-head">
+                      <i>{String(5 + k).padStart(2, '0')}</i>
+                      <input className="inp" type="text" placeholder="제목 (예: 핵심 어휘)" aria-label={(5 + k) + '번 항목 제목'} value={x.title} onChange={(e) => setX(k, { title: e.target.value })} />
+                      <button type="button" className="sq-btn sm" aria-label="위로 옮기기" disabled={k === 0} onClick={() => moveX(k, k - 1)}><Icon name="up" stroke={2.2} /></button>
+                      <button type="button" className="sq-btn sm" aria-label="아래로 옮기기" disabled={k === ex.extras.length - 1} onClick={() => moveX(k, k + 1)}><Icon name="down" stroke={2.2} /></button>
+                      <button type="button" className="sq-btn sm" aria-label="이 항목 삭제" onClick={() => setEx({ ...ex, extras: ex.extras.filter((_, j) => j !== k) })}><Icon name="trash" size={19} /></button>
+                    </div>
+                    {headKey(x.title) && <div className="warn">기본 항목과 이름이 같아서 ‘{x.title.trim()} (추가)’로 저장됩니다.</div>}
+                    <textarea className="inp" rows={3} placeholder="내용" aria-label={(5 + k) + '번 항목 내용'} value={x.body} onChange={(e) => setX(k, { body: e.target.value })} />
+                  </div>
+                ))}
+                <button type="button" className="btn ghost" style={{ height: 56, borderRadius: 14 }} onClick={() => setEx({ ...ex, extras: [...ex.extras, withKey({ title: '', body: '' })] })}>
+                  <Icon name="plus" size={18} stroke={2.2} />항목 추가
+                </button>
+              </div>
             </section>
           </main>
         )}
@@ -1551,45 +1860,86 @@ function Editor({ p, which, onSaved }) {
           <main className="ed-main">
             <div className="ed-quiz">
               <div className="ed-list">
-                <div className="lbl">문항 {qs.length}개</div>
+                <div className="lbl">문항 {qs.length}개 · 수업에 {shownCount}개 보임</div>
                 {qs.map((x, k) => (
-                  <button key={k} type="button" className="ed-item" aria-pressed={k === si} onClick={() => setSel(k)}>
-                    <span className="n">{k + 1}</span>
-                    <span className="t">{x.text || '(새 문항)'}</span>
-                  </button>
+                  <div className="ed-row" key={x._k}>
+                    <button type="button" className={'ed-item' + (x.hidden ? ' off' : '')} aria-pressed={k === si} onClick={() => setSel(k)}>
+                      <span className="n">{k + 1}</span>
+                      <span className="t">{x.text || '(새 문항)'}</span>
+                      <span className="k">{QTYPE[x.type].label}</span>
+                    </button>
+                    <button type="button" className="ed-eye" aria-pressed={!x.hidden} aria-label={(k + 1) + '번 ' + (x.hidden ? '수업에 보이기' : '수업에서 숨기기')} title={x.hidden ? '숨김 · 누르면 보입니다' : '보임 · 누르면 숨깁니다'} onClick={() => toggleHide(k)}>
+                      <Icon name={x.hidden ? 'eyeOff' : 'eye'} size={22} />
+                    </button>
+                  </div>
                 ))}
-                <button type="button" className="btn ghost" style={{ height: 60, borderRadius: 16 }} onClick={() => { setQs([...qs, blankQuestion()]); setSel(qs.length); }}>
+                <button type="button" className="btn ghost" style={{ height: 60, borderRadius: 16 }} onClick={() => { setQs([...qs, withKey(blankQuestion())]); setSel(qs.length); }}>
                   <Icon name="plus" size={18} stroke={2.2} />문항 추가
                 </button>
               </div>
               <section className="ed-form" aria-label="문항 편집">
                 <div className="ed-form-head">
-                  <b>문항 {si + 1}</b>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <b>문항 {si + 1}</b>
+                    {q.hidden && <span className="badge gray"><Icon name="eyeOff" size={14} stroke={2.2} />수업에서 숨김</span>}
+                  </div>
                   <div className="tools">
+                    <button type="button" className="btn" style={{ height: 48, borderRadius: 12, fontSize: 15 }} onClick={() => toggleHide(si)}>
+                      <Icon name={q.hidden ? 'eye' : 'eyeOff'} size={18} />{q.hidden ? '보이기' : '숨기기'}
+                    </button>
                     <button type="button" className="sq-btn sm" aria-label="위로 옮기기" disabled={si === 0} onClick={() => swap(si, si - 1)}><Icon name="up" stroke={2.2} /></button>
                     <button type="button" className="sq-btn sm" aria-label="아래로 옮기기" disabled={si === qs.length - 1} onClick={() => swap(si, si + 1)}><Icon name="down" stroke={2.2} /></button>
                     <button type="button" className="btn" style={{ height: 48, borderRadius: 12, fontSize: 15, color: 'var(--ink2)' }} disabled={qs.length < 2} onClick={() => { setQs(qs.filter((_, j) => j !== si)); setSel(Math.max(0, si - 1)); }}>
-                      <Icon name="trash" size={18} />문항 삭제
+                      <Icon name="trash" size={18} />삭제
                     </button>
                   </div>
                 </div>
-                <label className="field"><span>문제</span><textarea className="inp" rows={2} value={q.text} onChange={(e) => setQ({ text: e.target.value })} /></label>
-                <label className="field"><span>제시문 <em>· 없으면 비워 두세요</em></span><input className="inp" type="text" placeholder="예: 밑줄 친 문장이나 빈칸 문장" value={q.quote} onChange={(e) => setQ({ quote: e.target.value })} /></label>
                 <div className="field">
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: 15, fontWeight: 600 }}>보기</span>
-                    <span style={{ fontSize: 14, color: 'var(--muted)' }}>번호를 누르면 정답으로 지정됩니다</span>
+                  <span>유형</span>
+                  <div className="seg white ed-type" role="group" aria-label="문항 유형" style={{ alignSelf: 'flex-start' }}>
+                    {QTYPES.map((t) => <button key={t.id} type="button" className="seg-btn" aria-pressed={q.type === t.id} onClick={() => setQ({ type: t.id })}>{t.label}</button>)}
                   </div>
-                  {q.opts.map((o, k) => (
-                    <div className="ed-opt" key={k}>
-                      <button type="button" className="circ" aria-label={CIRC[k] + '번을 정답으로'} aria-pressed={q.a === k} onClick={() => setQ({ a: q.a === k ? null : k })}>{CIRC[k]}</button>
-                      <input className="inp" type="text" aria-label={'보기 ' + CIRC[k]} value={o} style={{ borderColor: q.a === k ? 'var(--ink)' : undefined }} onChange={(e) => setQ({ opts: q.opts.map((x, j) => (j === k ? e.target.value : x)) })} />
-                      {q.a === k && <b>정답</b>}
-                    </div>
-                  ))}
                 </div>
-                <label className="field"><span>지문 근거</span><textarea className="inp" rows={2} lang="en" style={{ fontSize: 17 }} value={q.ev} onChange={(e) => setQ({ ev: e.target.value })} /></label>
-                <label className="field"><span>풀이</span><textarea className="inp" rows={2} style={{ fontSize: 17 }} value={q.why} onChange={(e) => setQ({ why: e.target.value })} /></label>
+                <label className="field"><span>{q.type === 'tf' ? '문장' : '문제'}{q.type === 'tf' && <em> · 맞는지 틀리는지 고를 내용</em>}</span><textarea className="inp" rows={2} {...qField('text')} /></label>
+                <label className="field"><span>제시문 <em>· 없으면 비워 두세요</em></span><textarea className="inp" rows={1} placeholder="예: 밑줄 친 문장이나 빈칸 문장" {...qField('quote')} /></label>
+
+                {q.type === 'choice' && (
+                  <div className="field">
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
+                      <span style={{ fontSize: 15, fontWeight: 600 }}>보기</span>
+                      <span style={{ fontSize: 14, color: 'var(--muted)' }}>번호를 누르면 정답으로 지정됩니다</span>
+                    </div>
+                    {q.opts.map((o, k) => (
+                      <div className="ed-opt" key={k}>
+                        <button type="button" className="circ" aria-label={(k + 1) + '번을 정답으로'} aria-pressed={q.a === k} onClick={() => setQ({ a: q.a === k ? null : k })}>{k + 1}</button>
+                        <input className="inp" type="text" aria-label={'보기 ' + (k + 1)} value={o} style={{ borderColor: q.a === k ? 'var(--ink)' : undefined }} onChange={(e) => setQ({ opts: q.opts.map((x, j) => (j === k ? e.target.value : x)) })} />
+                        {q.a === k && <b>정답</b>}
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {q.type === 'tf' && (
+                  <div className="field">
+                    <span>정답</span>
+                    <div role="group" aria-label="정답" style={{ display: 'flex', gap: 10 }}>
+                      {['T', 'F'].map((v) => <button key={v} type="button" className="circ lg" aria-label={'정답 ' + v} aria-pressed={q.tf === v} onClick={() => setQ({ tf: q.tf === v ? null : v })}>{v}</button>)}
+                    </div>
+                  </div>
+                )}
+                {q.type === 'short' && (
+                  <>
+                    <label className="field"><span>정답 <em>· 단어나 짧은 구</em></span><input className="inp" type="text" {...qField('answer')} /></label>
+                    <label className="field"><span>힌트 <em>· 없으면 비워 두세요</em></span><input className="inp" type="text" placeholder="예: c로 시작하는 9글자" {...qField('hint')} /></label>
+                  </>
+                )}
+                {q.type === 'essay' && (
+                  <>
+                    <label className="field"><span>예시 답안</span><textarea className="inp" rows={3} {...qField('answer')} /></label>
+                    <label className="field"><span>채점 포인트 <em>· 한 줄에 하나씩</em></span><textarea className="inp" rows={3} style={{ fontSize: 17 }} {...qField('rubric')} /></label>
+                  </>
+                )}
+                <label className="field"><span>지문 근거</span><textarea className="inp" rows={2} lang="en" style={{ fontSize: 17 }} {...qField('ev')} /></label>
+                <label className="field"><span>풀이</span><textarea className="inp" rows={2} style={{ fontSize: 17 }} {...qField('why')} /></label>
               </section>
             </div>
           </main>
