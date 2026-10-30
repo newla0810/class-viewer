@@ -516,6 +516,37 @@ function installFlexGap(win, opts) {
 /* 칠판용(옛 크롬) 준비: 시작 실패 이유 보이기, 전체 화면 이름 맞추기, flex gap 대응 */
 // 크롬 69에 없는 기능 채우기 (PDF 프로그램의 일꾼(worker)에도 같은 코드를 넣음)
 function cmvPoly(g) {
+  // 크롬 70 미만은 정렬이 같은 값의 순서를 지키지 않아 PDF 글자가 빠짐 → 순서를 지키는 정렬로 바꿈
+  (function () {
+  var A = g.Array.prototype;
+  var cv = /Chrome\/(\d+)/.exec((g.navigator && g.navigator.userAgent) || '');
+  if (!cv || +cv[1] >= 70) return;
+  var defCmp = function (x, y) { x = String(x); y = String(y); return x < y ? -1 : x > y ? 1 : 0; };
+  function msort(a, c) {
+    var n = a.length, buf = new Array(n);
+    for (var w = 1; w < n; w *= 2) {
+      for (var lo = 0; lo < n; lo += 2 * w) {
+        var mid = Math.min(lo + w, n), hi = Math.min(lo + 2 * w, n), p = lo, q = mid, k = lo;
+        while (p < mid && q < hi) buf[k++] = c(a[q], a[p]) < 0 ? a[q++] : a[p++];
+        while (p < mid) buf[k++] = a[p++];
+        while (q < hi) buf[k++] = a[q++];
+      }
+      var tmp = a; a = buf; buf = tmp;
+    }
+    return a;
+  }
+  Object.defineProperty(A, 'sort', { configurable: true, writable: true, value: function (cmp) {
+    if (cmp !== undefined && typeof cmp !== 'function') throw new TypeError('sort: comparator');
+    var o = Object(this), n = o.length >>> 0, vals = [], und = 0;
+    for (var i = 0; i < n; i++) { if (!(i in o)) continue; var v = o[i]; if (v === undefined) und++; else vals.push(v); }
+    var c = cmp ? function (x, y) { var r = +cmp(x, y); return r !== r ? 0 : r; } : defCmp;
+    var s = msort(vals, c), k = 0;
+    for (; k < s.length; k++) o[k] = s[k];
+    for (var u = 0; u < und; u++) o[k++] = undefined;
+    for (; k < n; k++) delete o[k];
+    return o;
+  } });
+  })();
   if (typeof g.globalThis === 'undefined') g.globalThis = g;
   var P = g.Promise, def = function (o, k, v) { if (o && !o[k]) Object.defineProperty(o, k, { configurable: true, writable: true, value: v }); };
   def(P, 'allSettled', function (it) {
