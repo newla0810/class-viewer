@@ -199,7 +199,9 @@ a{color:inherit}
 .ex-rail .fsv{padding:2px 0;text-align:center;font-family:var(--mono);font-size:13px;font-weight:600;color:var(--muted)}
 
 /* 퀴즈 */
-.qz-main{flex:1;width:100%;max-width:1600px;margin:0 auto;padding:28px 36px;display:flex;flex-wrap:wrap;align-items:stretch;gap:28px}
+.qz-wrap{flex:1;width:100%;display:flex;align-items:flex-start;padding-right:16px}
+.qz-main{flex:1;min-width:0;width:100%;max-width:1600px;margin:0 auto;padding:28px 36px;display:flex;flex-wrap:wrap;align-items:stretch;gap:28px}
+.ex-rail.qz-rail{flex:none;align-self:flex-start;position:sticky;top:calc(50vh - 110px);margin-top:28px}
 .qz-left{flex:999 1 640px;min-width:0;display:flex;flex-direction:column;gap:22px}
 .qz-prog{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .qz-prog .l{display:flex;align-items:center;gap:14px}
@@ -1561,8 +1563,11 @@ function ExplainView({ p, info, onVisual }) {
 }
 
 /* ───────── 퀴즈 ───────── */
+const QZ = [0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.35];
 function QuizView({ info }) {
   const f = useFile(info);
+  const [qz, setQz] = useState(() => clamp(local.get('qzZoom', 3), 0, QZ.length - 1));
+  useEffect(() => { local.set('qzZoom', qz); }, [qz]);
   const all = useMemo(() => (f.status === 'ok' ? parseQuiz(f.data.text).filter((q) => q.text || q.opts.some(Boolean) || q.answer) : []), [f.data]);
   const qs = useMemo(() => all.filter((q) => !q.hidden), [all]);
   const [idx, setIdx] = useState(0);
@@ -1585,7 +1590,8 @@ function QuizView({ info }) {
 
   return (
     <div className="scroll" style={{ display: 'flex', flexDirection: 'column' }}>
-      <main className="qz-main">
+      <div className="qz-wrap">
+      <main className="qz-main" style={{ zoom: QZ[qz] }}>
         <section className="qz-left" aria-label="문제">
           <div className="qz-prog">
             <div className="l">
@@ -1682,6 +1688,12 @@ function QuizView({ info }) {
           </div>
         </aside>
       </main>
+      <aside className="ex-rail qz-rail" aria-label="퀴즈 글자 크기">
+        <button type="button" className="fsb" aria-label="글자 크게" style={{ fontSize: 19 }} disabled={qz === QZ.length - 1} onClick={() => setQz(Math.min(QZ.length - 1, qz + 1))}>가+</button>
+        <div className="fsv" aria-live="polite">{Math.round(QZ[qz] * 100)}%</div>
+        <button type="button" className="fsb" aria-label="글자 작게" style={{ fontSize: 15 }} disabled={qz === 0} onClick={() => setQz(Math.max(0, qz - 1))}>가−</button>
+      </aside>
+      </div>
     </div>
   );
 }
