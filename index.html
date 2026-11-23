@@ -68,6 +68,10 @@ button:focus{outline:none}
 .oview{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:20;background:#E3E6EA}
 .oview.on{display:block}
 .oview iframe{display:block;width:100%;height:100%;border:0}
+.oclose{position:absolute;top:12px;right:12px;z-index:2;display:flex;align-items:center;height:52px;padding:0 18px;border-radius:14px;background:rgba(18,20,23,.82);color:#fff;font-size:17px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.oclose .ic{margin-right:8px}
+.oclose:active{background:#000}
+.chip.ref{background:#fff;color:var(--ink2);border:1px solid var(--line2)}
 .otoast{display:none;position:fixed;left:50%;bottom:40px;z-index:30;transform:translateX(-50%);align-items:center;max-width:90%;padding:14px 20px;border-radius:14px;background:var(--ink);color:#fff;font-size:16px;font-weight:600}
 .otoast .ic{color:var(--hl);margin-right:10px;flex:none}
 .otoast.on{display:flex}
@@ -76,7 +80,7 @@ button:focus{outline:none}
 </style>
 </head>
 <body>
-<header class="otop"><div class="mark" id="omark"></div><b>칠판 열기</b><small>학습지 만들기에서 저장한 수업용 파일을 여는 곳</small><span class="f"></span><button class="btn" data-o="full" id="ofull"></button></header>
+<header class="otop"><div class="mark" id="omark"></div><b>칠판 열기</b><small>수업용 파일과 참고 자료(html)를 여는 곳</small><span class="f"></span><button class="btn" data-o="full" id="ofull"></button></header>
 <main class="omain" id="omain"></main>
 <div class="oview" id="oview"></div>
 <div class="otoast" id="otoast"></div>
@@ -130,6 +134,14 @@ function oInfo(html) {
     return { kind: d.kind, round: d.round || '', grade: d.grade || '', n: d.items.length, nums: nums, first: d.items[0] };
   } catch (e) { return null; }
 }
+/* 수업용 파일이 아닌 html(참고 자료): 제목은 <title>, 없으면 파일 이름 */
+function oRefTitle(html, name) {
+  var base = String(name || '').replace(/\.html?$/i, '');
+  var tm = /<title[^>]*>([\s\S]*?)<\/title>/i.exec(String(html).slice(0, 200000));
+  var t = tm ? tm[1].replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').replace(/^\s+|\s+$/g, '') : '';
+  return t || base;
+}
+function oIsHtml(f) { return /\.html?$/i.test(f.name) && /<(html|body|head|div|p|h1|script|style|table|svg|section|main)[\s>]/i.test(f.html); }
 function oRead(file) {
   return new Promise(function (ok) {
     var r = new FileReader();
@@ -146,13 +158,13 @@ function oAdd(files) {
     var bad = [], added = 0;
     list.forEach(function (f) {
       var info = oInfo(f.html);
-      if (!info) { bad.push(f.name); return; }
-      var rec = { name: f.name, html: f.html, info: info }, at = -1;
+      if (!info && !oIsHtml(f)) { bad.push(f.name); return; }
+      var rec = { name: f.name, html: f.html, info: info, ref: !info, title: info ? '' : oRefTitle(f.html, f.name) }, at = -1;
       OF.forEach(function (x, i) { if (x.name === f.name) at = i; });
       if (at >= 0) OF[at] = rec; else OF.push(rec);
       added++;
     });
-    if (bad.length) oToast(oic('warn', 18) + '<span>학습지 만들기의 수업용 파일이 아니에요 · ' + oesc(bad.join(', ')) + '</span>');
+    if (bad.length) oToast(oic('warn', 18) + '<span>열 수 있는 html 파일이 아니에요 · ' + oesc(bad.join(', ')) + '</span>');
     if (!added) { oDraw(); return; }
     if (!before && OF.length === 1) oShow(0); else oDraw();
   });
@@ -163,7 +175,7 @@ function oDraw() {
   var h;
   if (!OF.length) {
     h = '<section class="hero"><h1>수업용 파일을 열어 주세요</h1>' +
-      '<p>USB나 내려받은 폴더에서 수업용 파일(.html)을 고르세요. 여러 개를 한 번에 골라도 돼요.</p>' +
+      '<p>USB나 내려받은 폴더에서 수업용 파일이나 참고 자료(.html)를 고르세요. 여러 개를 한 번에 골라도 돼요.</p>' +
       '<button class="big" data-o="pick">' + oic('folder', 28, 2.2) + '파일 열기</button>' +
       '<div class="steps">' +
         '<div class="st"><i>1</i><b>PC에서 수업용 저장</b><span>학습지 만들기에서 지문 하나 또는 회차 전체를 수업용으로 저장</span></div>' +
@@ -172,9 +184,10 @@ function oDraw() {
       '</div>' +
       '<div class="lock">' + oic('lock', 17) + '<span>파일은 이 전자칠판 안에서만 읽어요. 어디에도 올라가지 않고, 이 화면을 닫으면 남지 않아요.</span></div></section>';
   } else {
-    h = '<section class="lst"><div class="lh"><div><small>이번에 연 파일</small><h1>수업용 파일 ' + OF.length + '개</h1></div>' +
+    h = '<section class="lst"><div class="lh"><div><small>이번에 연 파일</small><h1>연 파일 ' + OF.length + '개</h1></div>' +
       '<button class="btn" data-o="pick">' + oic('plus', 20, 2.2) + '파일 더 열기</button></div><div class="grid">' +
       OF.map(function (f, i) {
+        if (f.ref) return '<button class="card" data-o="open" data-v="' + i + '"><span class="ct"><span class="num sm">&nbsp;</span><span class="chip ref">참고 자료</span></span><b class="ttl">' + oesc(f.title) + '</b><span class="sub"></span><span class="fn">' + oesc(f.name) + '</span></button>';
         var I = f.info, round = I.kind === 'round';
         var lo = I.nums[0] || '', hi = I.nums[I.nums.length - 1] || '';
         var num = round ? (lo && hi && lo !== hi ? lo + '~' + hi : lo) : I.first.num || '';
@@ -193,10 +206,15 @@ function oShow(i) {
   if (!f) return;
   OI = i;
   var host = '<script>window.WSB_HOST={close:"파일 닫기"};<\/script>';
-  var html = f.html.replace(/<head>/i, '<head>' + host);
+  var html = String(f.html || '').replace(/^\uFEFF/, '');
+  /* 수업용 파일은 안에 [파일 닫기]가 있음. 참고 자료에는 오른쪽 위에 닫기 단추를 붙임 */
+  if (!f.ref) html = html.replace(/<head>/i, '<head>' + host);
   var v = o$('#oview');
-  v.innerHTML = '<iframe allow="fullscreen" allowfullscreen></iframe>';
+  v.innerHTML = '<iframe allow="fullscreen" allowfullscreen></iframe>' + (f.ref ? '<button class="oclose" data-o="vclose">' + oic('x', 20, 2.4) + '닫기</button>' : '');
   v.className = 'oview on';
+  if (f.ref) v.firstChild.onload = function () {
+    try { this.contentWindow.document.addEventListener('keydown', function (e) { if (e.key === 'Escape' || e.keyCode === 27) oHide(); }); } catch (e) {}
+  };
   v.firstChild.srcdoc = html;
   setTimeout(function () { try { v.firstChild.contentWindow.focus(); } catch (e) {} }, 300);
 }
@@ -216,6 +234,7 @@ function oTap(t) {
   if (a === 'pick') { var fi = o$('#ofile'); fi.value = ''; fi.click(); }
   else if (a === 'open') oShow(+el.getAttribute('data-v'));
   else if (a === 'full') oFull();
+  else if (a === 'vclose') oHide();
 }
 function oBind() {
   var TAP = null, last = 0, doc = document;
